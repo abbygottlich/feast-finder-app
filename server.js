@@ -13,7 +13,9 @@ app.listen(port, (err) => {
 
 let returnedRestaurants = []
 
-fetch("https://api.yelp.com/v3/businesses/search?location=Austin&limit=50", {
+// create a loop component for the offset value
+// create a function component for the location city/state values
+fetch("https://api.yelp.com/v3/businesses/search?location=Jacksonville,FL&limit=50", {
     mode: "no-cors",
     method: "GET",
     headers: {
@@ -24,4 +26,5 @@ fetch("https://api.yelp.com/v3/businesses/search?location=Austin&limit=50", {
     body: JSON.stringify()
 })
     .then(res => res.json())
-    .then(data => data.businesses.map((restr) => { console.log(restr) }))
+    // .then(data => data.businesses.map((restr) => { console.log(restr) }))
+    .then(data => console.log(data.businesses[Math.floor(Math.random() * data.businesses.length)]));
