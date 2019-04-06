@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import City from "./components/City";
 import State from "./components/State";
-import FindState from "./components/FindState";
 
 class App extends Component {
   render() {
@@ -24,7 +23,7 @@ class App extends Component {
           </a>
           <City />
           <State />
-          <button onClick={FindState}>Find a Feast!</button>
+          <button>Find a Feast!</button>
         </header>
       </div>
     );

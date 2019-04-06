@@ -1,7 +1,7 @@
 
-// function findCity() {
-//     const cityName = document.getElementById('city-name');
-//     console.log(cityName.value)
-// }
+function findCity() {
+    const cityName = document.getElementById('city-name');
+    return cityName.value
+}
 
-// export default findCity;
+module.exports = findCity;
