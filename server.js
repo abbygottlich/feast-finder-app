@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const fetch = require("node-fetch");
 const port = 5000
+const findState = require("./frontend/src/components/FindState")
 
 const app = express()
 app.use(bodyParser)
@@ -15,7 +16,7 @@ let returnedRestaurants = []
 
 // create a loop component for the offset value
 // create a function component for the location city/state values
-fetch("https://api.yelp.com/v3/businesses/search?location=Jacksonville,FL&limit=50", {
+fetch("https://api.yelp.com/v3/businesses/search?location=Austin," + { findState } + "&limit=50", {
     mode: "no-cors",
     method: "GET",
     headers: {
