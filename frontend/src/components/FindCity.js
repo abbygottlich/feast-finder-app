@@ -6,7 +6,7 @@ function findCity() {
         for (let i = 0; i < splitCityName.length; i++) {
             splitCityName[i] = splitCityName[i].charAt(0).toUpperCase() + splitCityName[i].substring(1);
         }
-        console.log(splitCityName.join(" "));
+        return splitCityName.join(" ");
     }
 }
 

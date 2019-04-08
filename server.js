@@ -17,7 +17,7 @@ let returnedRestaurants = []
 
 // create a loop component for the offset value
 // create a function component for the location city/state values
-fetch("https://api.yelp.com/v3/businesses/search?location=" + { findCity } + "," + { findState } + "&limit=50", {
+fetch("https://api.yelp.com/v3/businesses/search?location=FortWorth," + { findState } + "&limit=50", {
     mode: "no-cors",
     method: "GET",
     headers: {

@@ -1,7 +1,10 @@
 
 function findState() {
     const stateName = document.getElementById('state-name');
-    return stateName.value
+    if (stateName.value) {
+        let capitalStateName = stateName.value.toUpperCase();
+        return capitalStateName;
+    }
 }
 
 module.exports = findState;
