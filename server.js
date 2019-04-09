@@ -5,6 +5,7 @@ const restaurantRouter = require("./Routes/Restaurants");
 const app = express();
 const cors = require("cors");
 
+// using cors to connect the server to the browser
 app.use(cors())
 app.use(bodyParser.json())
 app.use("/restaurants", restaurantRouter)
