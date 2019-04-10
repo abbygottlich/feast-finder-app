@@ -30,8 +30,8 @@ class App extends Component {
     fetch(urlToFetch)
       .then(res => res.json())
       .then(restaurantData => {
-        console.log("first", restaurantData)
         returnedRestaurantArr.push(restaurantData)
+        // setting the state equal to the returned data
         this.setState({
           returnedRestaurant: returnedRestaurantArr
         })
@@ -41,7 +41,6 @@ class App extends Component {
   render() {
     const restaurantLength = this.state.returnedRestaurant.length
     const result = this.state.returnedRestaurant[0]
-    console.log('city: ', this.state.city, ' state: ', this.state.USstate)
     return (
       <div className="App">
         <form onSubmit={this.handleSubmit}>
