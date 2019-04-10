@@ -36,12 +36,11 @@ class App extends Component {
           returnedRestaurant: returnedRestaurantArr
         })
       })
-    // .then(restaurantData => )
-    // .then(returnedRestaurantArr => )
-    // .then(console.log("second", this.state.returnedRestaurant))
   }
 
   render() {
+    const restaurantLength = this.state.returnedRestaurant.length
+    const result = this.state.returnedRestaurant[0]
     console.log('city: ', this.state.city, ' state: ', this.state.USstate)
     return (
       <div className="App">
@@ -50,7 +49,10 @@ class App extends Component {
           <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange} className="state-name" id="state-name" maxLength="2"></input>
           <button type="submit">Find a Feast!</button>
         </form>
-        <div className="result">{this.state.returnedRestaurant.length > 0 ? this.state.returnedRestaurant[0].id : "nonenansd"}</div>
+        <div className="resultName">{restaurantLength > 0 ? result.name : "nonenansd"}</div>
+        <div className="resultCategory">{restaurantLength > 0 ? result.categories[0].title : "nonenansd"}</div>
+        <div className="resultPrice">{restaurantLength > 0 ? result.price : "nonenansd"}</div>
+        <div className="resultLocation">{restaurantLength > 0 ? result.location.display_address.join(" ") : "nonenansd"}</div>
       </div>
     );
   }
