@@ -41,7 +41,7 @@ class App extends Component {
 
   loadImage() {
     if (this.state.returnedRestaurant.length > 0) {
-      return <img src={this.state.returnedRestaurant[0].image_url} alt="words" />
+      return <img src={this.state.returnedRestaurant[0].image_url} alt={this.state.returnedRestaurant[0].categories[0].title} />
     }
   }
 
