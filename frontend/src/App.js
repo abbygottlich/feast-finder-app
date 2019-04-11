@@ -35,7 +35,14 @@ class App extends Component {
         this.setState({
           returnedRestaurant: returnedRestaurantArr
         })
+        console.log(this.state.returnedRestaurant)
       })
+  }
+
+  loadImage() {
+    if (this.state.returnedRestaurant.length > 0) {
+      return <img src={this.state.returnedRestaurant[0].image_url} alt="words" />
+    }
   }
 
   render() {
@@ -48,6 +55,7 @@ class App extends Component {
           <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange} className="state-name" id="state-name" maxLength="2"></input>
           <button type="submit">Find a Feast!</button>
         </form>
+        <div>{this.loadImage()}</div>
         <div className="resultName">{restaurantLength > 0 ? result.name : ""}</div>
         <div className="resultCategory">{restaurantLength > 0 ? result.categories[0].title : ""}</div>
         <div className="resultPrice">{restaurantLength > 0 ? result.price : ""}</div>
