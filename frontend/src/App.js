@@ -45,6 +45,15 @@ class App extends Component {
     }
   }
 
+  loadRatingButtons() {
+    if (this.state.returnedRestaurant.length > 0) {
+      return <div className="ratingButtons">
+        <img className="likeButton" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
+        <img className="dislikeButton" alt="dislike-button" src="https://image.flaticon.com/icons/svg/126/126504.svg"></img>
+      </div>
+    }
+  }
+
   render() {
     const restaurantLength = this.state.returnedRestaurant.length
     const result = this.state.returnedRestaurant[0]
@@ -67,10 +76,10 @@ class App extends Component {
           </div>
         </div>
         <div className="messagesAndButtons">
-          <div className="hungryMessage">{restaurantLength <= 0 ? "Hungry?" : "Don't like your result? Click the 'Find Feast' button again!"}</div>
-          <div className="ratingMessage">{restaurantLength > 0 ? "Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile!" : ""}</div>
-          <div className="thumbsUpButton">{restaurantLength > 0 ? "Thumbs Up" : ""}</div>
-          <div className="thumbsDownButton">{restaurantLength > 0 ? "Thumbs Down" : ""}</div>
+          <div className="hungryMessage">{restaurantLength <= 0 ? "Hungry? Type in your city and state and we'll tell you where to go!" : ""}</div>
+          <div className="regenerateMessage">{restaurantLength > 0 ? "Don't like your result? Click the 'Find Feast' button again." : ""}</div>
+          <div className="ratingMessage">{restaurantLength > 0 ? "Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile." : ""}</div>
+          <div>{this.loadRatingButtons()}</div>
         </div>
       </div>
     );

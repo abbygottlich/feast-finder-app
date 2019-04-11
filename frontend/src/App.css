@@ -1,6 +1,3 @@
-/* yellow: #d6932f
-blue: #aec2cd */
-
 .App {
   text-align: center;
 }
@@ -85,13 +82,47 @@ blue: #aec2cd */
   font-style: italic;
 }
 
-.resultPrice {
-  margin-top: 8px;
-}
-
 .resultImage {
   width: 300px;
   margin-top: 20px;
   border-radius: 20px 20px 20px 20px;
   filter: brightness(40%);
+}
+
+.hungryMessage {
+  width: 500px;
+  font-family: "Raleway";
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #d3d3d3;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.regenerateMessage, .ratingMessage {
+  font-family: "Georgia";
+  font-size: 18px;
+  font-style: italic;
+  color: #eb5548;
+}
+
+.ratingMessage {
+  margin-top: 5px;
+}
+
+.ratingButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 60px;
+  height: 40px;
+  margin: auto;
+}
+
+.likeButton {
+  width: 20px;
+}
+
+.dislikeButton {
+  width: 20px;
 }
