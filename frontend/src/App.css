@@ -1,16 +1,63 @@
+/* yellow: #d6932f
+blue: #aec2cd */
+
 .App {
   text-align: center;
 }
 
 .form {
+  background-color: #eb5548;
+  height: 70px;
+}
+
+.formFields {
   margin: auto;
+  width: 50%;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.city-name, .state-name {
+  height: 40px;
+  background-color: #eb5548;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.state-name {
+  width: 70px;
+}
+
+.city-name::placeholder, .state-name::placeholder {
+  color: #ffffff;
+  font-family: "Raleway";
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.submitButton {
+  height: 40px;
+  width: 140px;
+  margin-top: 13px;
+  border: none;
+  border-radius: 500px;
+  color: #eb5548;
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .restaurantInfo {
   position: relative;
   width: 300px;
   text-align: center;
-  /* height: 400px; */
   overflow: hidden;
   margin: auto;
 }
@@ -24,12 +71,27 @@
   width: 250px;
 }
 
-.resultName, .resultCategory, .resultPrice, .resultLocation {
-  margin: auto;
+.resultName {
+  font-family: "Raleway";
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.resultCategory, .resultPrice, .resultLocation {
+  margin-top: 5px;
+  font-family: "Georgia";
+  font-size: 18px;
+  font-style: italic;
+}
+
+.resultPrice {
+  margin-top: 8px;
 }
 
 .resultImage {
   width: 300px;
-  height: 100%;
-  filter: brightness(60%);
+  margin-top: 20px;
+  border-radius: 20px 20px 20px 20px;
+  filter: brightness(40%);
 }

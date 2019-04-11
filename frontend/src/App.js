@@ -50,10 +50,12 @@ class App extends Component {
     const result = this.state.returnedRestaurant[0]
     return (
       <div className="App">
-        <form className="form" onSubmit={this.handleSubmit}>
-          <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange} className="city-name" id="city-name"></input>
-          <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange} className="state-name" id="state-name" maxLength="2"></input>
-          <button type="submit">Find a Feast!</button>
+        <form className="form" onSubmit={this.handleSubmit} autocomplete="off">
+          <div className="formFields">
+            <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange} className="city-name"></input>
+            <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange} className="state-name" maxLength="2"></input>
+            <button className="submitButton" type="submit">Find a Feast!</button>
+          </div>
         </form>
         <div className="restaurantInfo">
           <div>{this.loadImage()}</div>
