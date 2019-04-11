@@ -2,7 +2,34 @@
   text-align: center;
 }
 
-.image {
-  width: 200px;
+.form {
+  margin: auto;
+}
+
+.restaurantInfo {
+  position: relative;
+  width: 300px;
+  text-align: center;
+  /* height: 400px; */
+  overflow: hidden;
+  margin: auto;
+}
+
+.restaurantTextInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  width: 250px;
+}
+
+.resultName, .resultCategory, .resultPrice, .resultLocation {
+  margin: auto;
+}
+
+.resultImage {
+  width: 300px;
   height: 100%;
+  filter: brightness(60%);
 }
