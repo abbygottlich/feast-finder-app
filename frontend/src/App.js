@@ -58,7 +58,16 @@ class App extends Component {
   addToFavorites() {
     if (this.state.returnedRestaurant.length > 0) {
       this.state.favorites.push(this.state.returnedRestaurant[0].name)
-      console.log(this.state.favorites)
+      // console.log(this.state.favorites)
+    }
+  }
+
+  showFavorites() {
+    if (this.state.favorites.length > 0) {
+      for (let i = 0; i < this.state.favorites.length; i++) {
+        // return <div className="favoritesList">{this.state.favorites[i]}</div>
+        console.log(this.state.favorites[i])
+      }
     }
   }
 
@@ -67,12 +76,12 @@ class App extends Component {
     const result = this.state.returnedRestaurant[0]
     return (
       <div className="App">
-        <form className="form" onSubmit={this.handleSubmit} autocomplete="off">
+        <form className="form" onSubmit={this.handleSubmit} autoComplete="off">
           <div className="formFields">
             <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange} className="city-name"></input>
             <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange} className="state-name" maxLength="2"></input>
             <button className="submitButton" type="submit">Find a Feast!</button>
-            <div className="myFavorites">My Favorites</div>
+            {/* <div className="myFavorites" onClick={() => this.showFavorites()} >My Favorites</div> */}
           </div>
         </form>
         <div className="restaurantInfo">
@@ -89,6 +98,7 @@ class App extends Component {
           <div className="regenerateMessage">{restaurantLength > 0 ? "Don't like your result? Click the 'Find Feast' button again." : ""}</div>
           <div className="ratingMessage">{restaurantLength > 0 ? "Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile." : ""}</div>
           <div>{this.loadRatingButtons()}</div>
+          <div className="myFavorites" onClick={() => this.showFavorites()}>My Favorites</div>
         </div>
       </div>
     );
