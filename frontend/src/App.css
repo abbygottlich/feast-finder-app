@@ -51,6 +51,14 @@
   text-transform: uppercase;
 }
 
+.myFavorites {
+  margin-top: 25px;
+  font-family: "Georgia";
+  font-size: 14px;
+  font-style: italic;
+  color: #ffffff;
+}
+
 .restaurantInfo {
   position: relative;
   width: 300px;

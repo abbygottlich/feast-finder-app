@@ -6,7 +6,8 @@ class App extends Component {
   state = {
     city: "",
     USstate: "",
-    returnedRestaurant: []
+    returnedRestaurant: [],
+    favorites: []
   }
 
   // setting the state equal to what's being typed inside the form fields
@@ -48,9 +49,16 @@ class App extends Component {
   loadRatingButtons() {
     if (this.state.returnedRestaurant.length > 0) {
       return <div className="ratingButtons">
-        <img className="likeButton" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
+        <img onClick={() => this.addToFavorites()} className="likeButton" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
         <img className="dislikeButton" alt="dislike-button" src="https://image.flaticon.com/icons/svg/126/126504.svg"></img>
       </div>
+    }
+  }
+
+  addToFavorites() {
+    if (this.state.returnedRestaurant.length > 0) {
+      this.state.favorites.push(this.state.returnedRestaurant[0].name)
+      console.log(this.state.favorites)
     }
   }
 
@@ -64,6 +72,7 @@ class App extends Component {
             <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange} className="city-name"></input>
             <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange} className="state-name" maxLength="2"></input>
             <button className="submitButton" type="submit">Find a Feast!</button>
+            <div className="myFavorites">My Favorites</div>
           </div>
         </form>
         <div className="restaurantInfo">
