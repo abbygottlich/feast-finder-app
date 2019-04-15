@@ -7,7 +7,8 @@ class App extends Component {
     city: "",
     USstate: "",
     returnedRestaurant: [],
-    favorites: []
+    favorites: [],
+    dislikes: []
   }
 
   // setting the state equal to what's being typed inside the form fields
@@ -50,23 +51,35 @@ class App extends Component {
     if (this.state.returnedRestaurant.length > 0) {
       return <div className="ratingButtons">
         <img onClick={() => this.addToFavorites()} className="likeButton" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
-        <img className="dislikeButton" alt="dislike-button" src="https://image.flaticon.com/icons/svg/126/126504.svg"></img>
+        <img onClick={() => this.addToDislikes()} className="dislikeButton" alt="dislike-button" src="https://image.flaticon.com/icons/svg/126/126504.svg"></img>
       </div>
     }
   }
 
   addToFavorites() {
-    if (this.state.returnedRestaurant.length > 0) {
-      this.state.favorites.push(this.state.returnedRestaurant[0].name)
-      // console.log(this.state.favorites)
-    }
+    this.state.favorites.push(this.state.returnedRestaurant[0].name)
+    // console.log(this.state.favorites)
   }
 
   showFavorites() {
     if (this.state.favorites.length > 0) {
       for (let i = 0; i < this.state.favorites.length; i++) {
         // return <div className="favoritesList">{this.state.favorites[i]}</div>
-        console.log(this.state.favorites[i])
+        // console.log(this.state.favorites[i])
+      }
+    }
+  }
+
+  addToDislikes() {
+    this.state.dislikes.push(this.state.returnedRestaurant[0].name)
+    // console.log(this.state.dislikes)
+  }
+
+  showDislikes() {
+    if (this.state.dislikes.length > 0) {
+      for (let i = 0; i < this.state.dislikes.length; i++) {
+        // return <div className="dislikesList">{this.state.favorites[i]}</div>
+        console.log(this.state.dislikes[i])
       }
     }
   }
@@ -99,6 +112,7 @@ class App extends Component {
           <div className="ratingMessage">{restaurantLength > 0 ? "Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile." : ""}</div>
           <div>{this.loadRatingButtons()}</div>
           <div className="myFavorites" onClick={() => this.showFavorites()}>My Favorites</div>
+          <div className="myDislikes" onClick={() => this.showDislikes()}>My Dislikes</div>
         </div>
       </div>
     );

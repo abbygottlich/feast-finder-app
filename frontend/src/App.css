@@ -51,7 +51,7 @@
   text-transform: uppercase;
 }
 
-.myFavorites {
+.myFavorites, .myDislikes {
   margin-top: 25px;
   font-family: "Georgia";
   font-size: 14px;
