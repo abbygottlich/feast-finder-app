@@ -5,6 +5,7 @@ exports.list = function list(request, response) {
     const userId = 1 //this will change when authentication is hooked up
     const rating = request.params.rating
     Restaurant.find({
+        // this key should match the key from mLab and the value is equal to whatever the user types in the path
         userId: userId,
         rating: rating
     }).exec().then((restaurants) => {

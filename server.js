@@ -7,6 +7,7 @@ const restaurantRouter = require("./Routes/Fetch");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
+// created a SECRET variable in .env file then added it to .gitignore to hide password
 mongoose.connect(process.env.SECRET, { useNewUrlParser: true });
 
 const restaurant = require("./routes/Restaurant");
