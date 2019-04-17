@@ -6,7 +6,7 @@ let restaurantSchema = new mongoose.Schema({
     genre: String,
     price: String,
     location: String,
-    rating: Number,
+    rating: String,
     userId: String
 
 });

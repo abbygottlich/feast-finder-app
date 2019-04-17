@@ -50,29 +50,46 @@ class App extends Component {
   loadRatingButtons() {
     if (this.state.returnedRestaurant.length > 0) {
       return <div className="ratingButtons">
-        <img onClick={() => this.addToFavorites()} className="likeButton" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
-        <img onClick={() => this.addToDislikes()} className="dislikeButton" alt="dislike-button" src="https://image.flaticon.com/icons/svg/126/126504.svg"></img>
+        <img onClick={() => this.saveRating("like")} className="likeButton" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
+        <img onClick={() => this.saveRating("dislike")} className="dislikeButton" alt="dislike-button" src="https://image.flaticon.com/icons/svg/126/126504.svg"></img>
       </div>
     }
   }
 
-  addToFavorites() {
-    this.state.favorites.push(this.state.returnedRestaurant[0].name)
-    // console.log(this.state.favorites)
+  showRatings = (rating) => {
+    fetch("http://localhost:5000/restaurants/" + rating)
+      .then(res => res.json())
+      .then(restaurants => {
+        console.log(restaurants)
+      })
+    // if (this.state.favorites.length > 0) {
+    //   for (let i = 0; i < this.state.favorites.length; i++) {
+    //     // return <div className="favoritesList">{this.state.favorites[i]}</div>
+    //     console.log(this.state.favorites[i])
+    //   }
+    // }
   }
 
-  showFavorites() {
-    if (this.state.favorites.length > 0) {
-      for (let i = 0; i < this.state.favorites.length; i++) {
-        // return <div className="favoritesList">{this.state.favorites[i]}</div>
-        console.log(this.state.favorites[i])
-      }
+  saveRating(rating) {
+    const restaurant = this.state.returnedRestaurant[0]
+    const restaurantBody = {
+      name: restaurant.name,
+      genre: restaurant.categories[0].title,
+      price: restaurant.price,
+      location: restaurant.location.display_address.join(" "),
+      rating: rating
     }
-  }
-
-  addToDislikes() {
-    this.state.dislikes.push(this.state.returnedRestaurant[0].name)
-    // console.log(this.state.dislikes)
+    fetch("http://localhost:5000/restaurants", {
+      method: "POST",
+      body: JSON.stringify(restaurantBody),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(restaurantData => {
+        console.log("restaurant saved!")
+      })
   }
 
   showDislikes() {
@@ -111,8 +128,8 @@ class App extends Component {
           <div className="regenerateMessage">{restaurantLength > 0 ? "Don't like your result? Click the 'Find Feast' button again." : ""}</div>
           <div className="ratingMessage">{restaurantLength > 0 ? "Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile." : ""}</div>
           <div>{this.loadRatingButtons()}</div>
-          <div className="myFavorites" onClick={() => this.showFavorites()}>My Favorites</div>
-          <div className="myDislikes" onClick={() => this.showDislikes()}>My Dislikes</div>
+          <div className="myFavorites" onClick={() => this.showRatings("like")}>My Favorites</div>
+          <div className="myDislikes" onClick={() => this.showRatings("dislike")}>My Dislikes</div>
         </div>
       </div>
     );
