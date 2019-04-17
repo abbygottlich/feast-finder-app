@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Form from "./components/Form";
+import RestaurantInfo from "./components/RestaurantInfo"
 
 class App extends Component {
 
@@ -39,12 +41,6 @@ class App extends Component {
         })
         console.log(this.state.returnedRestaurant)
       })
-  }
-
-  loadImage() {
-    if (this.state.returnedRestaurant.length > 0) {
-      return <img className="resultImage" src={this.state.returnedRestaurant[0].image_url} alt={this.state.returnedRestaurant[0].categories[0].title} />
-    }
   }
 
   loadRatingButtons() {
@@ -103,26 +99,15 @@ class App extends Component {
 
   render() {
     const restaurantLength = this.state.returnedRestaurant.length
-    const result = this.state.returnedRestaurant[0]
     return (
       <div className="App">
-        <form className="form" onSubmit={this.handleSubmit} autoComplete="off">
-          <div className="formFields">
-            <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange} className="city-name"></input>
-            <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange} className="state-name" maxLength="2"></input>
-            <button className="submitButton" type="submit">Find a Feast!</button>
-            {/* <div className="myFavorites" onClick={() => this.showFavorites()} >My Favorites</div> */}
-          </div>
-        </form>
-        <div className="restaurantInfo">
-          <div>{this.loadImage()}</div>
-          <div className="restaurantTextInfo">
-            <div className="resultName">{restaurantLength > 0 ? result.name : ""}</div>
-            <div className="resultCategory">{restaurantLength > 0 ? result.categories[0].title : ""}</div>
-            <div className="resultPrice">{restaurantLength > 0 ? result.price : ""}</div>
-            <div className="resultLocation">{restaurantLength > 0 ? result.location.display_address.join(" ") : ""}</div>
-          </div>
-        </div>
+        <Form city={this.state.city}
+          USstate={this.state.USstate}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit} />
+
+        <RestaurantInfo returnedRestaurant={this.state.returnedRestaurant} />
+
         <div className="messagesAndButtons">
           <div className="hungryMessage">{restaurantLength <= 0 ? "Hungry? Type in your city and state and we'll tell you where to go!" : ""}</div>
           <div className="regenerateMessage">{restaurantLength > 0 ? "Don't like your result? Click the 'Find Feast' button again." : ""}</div>
