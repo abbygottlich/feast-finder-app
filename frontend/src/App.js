@@ -65,7 +65,7 @@ class App extends Component {
     if (this.state.favorites.length > 0) {
       for (let i = 0; i < this.state.favorites.length; i++) {
         // return <div className="favoritesList">{this.state.favorites[i]}</div>
-        // console.log(this.state.favorites[i])
+        console.log(this.state.favorites[i])
       }
     }
   }
@@ -78,7 +78,7 @@ class App extends Component {
   showDislikes() {
     if (this.state.dislikes.length > 0) {
       for (let i = 0; i < this.state.dislikes.length; i++) {
-        // return <div className="dislikesList">{this.state.favorites[i]}</div>
+        // return <div className="dislikesList">{this.state.dislikes[i]}</div>
         console.log(this.state.dislikes[i])
       }
     }
