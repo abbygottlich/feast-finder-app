@@ -3,7 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import restaurants from './Reducers'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(restaurants)
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root'));
 
 serviceWorker.unregister();

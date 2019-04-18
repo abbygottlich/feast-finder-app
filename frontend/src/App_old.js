@@ -13,6 +13,36 @@ class App extends Component {
     dislikes: []
   }
 
+  // setting the state equal to what's being typed inside the form fields
+  handleChange = (e) => {
+    const value = e.target.value
+    const name = e.target.name
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleSubmit = (e) => {
+    // prevents the form from being refreshed before it gets submitted
+    e.preventDefault()
+    // fetching from the backend API
+    const apiUrl = "http://localhost:5000/restaurants/"
+    const stateName = this.state.USstate.toUpperCase()
+    const params = this.state.city + "," + stateName
+    const urlToFetch = apiUrl + params
+    let returnedRestaurantArr = []
+    fetch(urlToFetch)
+      .then(res => res.json())
+      .then(restaurantData => {
+        returnedRestaurantArr.push(restaurantData)
+        // setting the state equal to the returned data
+        this.setState({
+          returnedRestaurant: returnedRestaurantArr
+        })
+        console.log(this.state.returnedRestaurant)
+      })
+  }
+
   loadRatingButtons() {
     if (this.state.returnedRestaurant.length > 0) {
       return <div className="ratingButtons">
@@ -71,7 +101,10 @@ class App extends Component {
     const restaurantLength = this.state.returnedRestaurant.length
     return (
       <div className="App">
-        <Form />
+        <Form city={this.state.city}
+          USstate={this.state.USstate}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit} />
 
         <RestaurantInfo returnedRestaurant={this.state.returnedRestaurant} />
 
