@@ -2,24 +2,15 @@ import * as actionNames from '../Constants';
 import { combineReducers } from "redux";
 
 function returnedRestaurant(state = {}, action) {
+    // if there is an action with type:RESTAURANT_SUCCESS, set it equal to the value from that action
     if (action.type === actionNames.RESTAURANT_SUCCESS) {
         return action.value;
     }
     return state;
 }
 
-function favorites(state = [], action) {
-    return state;
-}
-
-function dislikes(state = [], action) {
-    return state;
-}
-
 const rootReducer = combineReducers({
-    returnedRestaurant,
-    favorites,
-    dislikes
+    returnedRestaurant
 });
 
 export default rootReducer;

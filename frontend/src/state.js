@@ -1,5 +1,3 @@
 export default {
-    returnedRestaurant: null,
-    favorites: [],
-    dislikes: []
+    returnedRestaurant: null
 }
