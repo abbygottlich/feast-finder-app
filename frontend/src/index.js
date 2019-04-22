@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import reducers from './Reducers';
 import thunk from 'redux-thunk';
 import state from "./state";
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import Favorites from "./components/Favorites"
 
 const composeEnhancers = typeof window === "object" &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
@@ -16,9 +18,18 @@ const enhancer = composeEnhancers(applyMiddleware(thunk));
 
 const store = createStore(reducers, state, enhancer)
 
+const Routing = (
+    <Router>
+        <div>
+            <Route exact path="/" component={App} />
+            <Route path="/favorites" component={Favorites} />
+        </div>
+    </Router>
+)
+
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        {Routing}
     </Provider>,
     document.getElementById('root'));
 

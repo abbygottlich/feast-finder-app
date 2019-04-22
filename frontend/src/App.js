@@ -3,6 +3,7 @@ import './App.css';
 import Form from "./components/Form";
 import RestaurantInfoContainer from "./Containers/RestaurantInfoContainer";
 import Login from "./components/Login";
+import { Link } from "react-router-dom";
 
 class App extends Component {
 
@@ -48,7 +49,7 @@ class App extends Component {
         <RestaurantInfoContainer />
 
         <div className="messagesAndButtons">
-          <div className="myFavorites" onClick={() => this.showRatings("like")}>My Favorites</div>
+          <Link to="/favorites" className="myFavorites">My Favorites</Link>
           <div className="myDislikes" onClick={() => this.showRatings("dislike")}>My Dislikes</div>
           <div>{this.state.favorites.map(f => <div>{f.name}</div>)}</div>
         </div>
