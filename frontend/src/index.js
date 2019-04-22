@@ -8,8 +8,9 @@ import { Provider } from 'react-redux';
 import reducers from './Reducers';
 import thunk from 'redux-thunk';
 import state from "./state";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
-import Favorites from "./components/Favorites"
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import Favorites from "./components/Favorites";
+import Dislikes from "./components/Dislikes";
 
 const composeEnhancers = typeof window === "object" &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
@@ -23,6 +24,7 @@ const Routing = (
         <div>
             <Route exact path="/" component={App} />
             <Route path="/favorites" component={Favorites} />
+            <Route path="/dislikes" component={Dislikes} />
         </div>
     </Router>
 )

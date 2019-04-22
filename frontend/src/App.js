@@ -41,16 +41,13 @@ class App extends Component {
   }
 
   render() {
-    const restaurantLength = this.state.returnedRestaurant.length
     return (
       <div className="App">
         <Form />
-
         <RestaurantInfoContainer />
-
         <div className="messagesAndButtons">
           <Link to="/favorites" className="myFavorites">My Favorites</Link>
-          <div className="myDislikes" onClick={() => this.showRatings("dislike")}>My Dislikes</div>
+          <Link to="/dislikes" className="myDislikes">My Dislikes</Link>
           <div>{this.state.favorites.map(f => <div>{f.name}</div>)}</div>
         </div>
 

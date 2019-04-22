@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class RestaurantInfo extends Component {
 
     loadRatingButtons() {
+        // getting props from redux
         if (this.props.returnedRestaurant) {
             return <div className="ratingButtons">
                 <img onClick={() => this.saveRating("like")} className="likeButton" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
@@ -12,6 +13,7 @@ class RestaurantInfo extends Component {
     }
 
     saveRating(rating) {
+        // getting props from redux
         const restaurant = this.props.returnedRestaurant
         const restaurantBody = {
             name: restaurant.name,
@@ -34,6 +36,7 @@ class RestaurantInfo extends Component {
     }
 
     render() {
+        // getting props from redux
         const result = this.props.returnedRestaurant
         console.log("restuarant info", result)
 

@@ -20,8 +20,8 @@ class Form extends Component {
     // setting the state equal to what's being typed inside the form fields
     handleChange = name => e => {
         const value = e.target.value
-        // const name = e.target.name
         this.setState({
+            // setting 'name' equal to e.target.name
             [name]: value
         })
         console.log(e.target.value)
@@ -53,10 +53,6 @@ class Form extends Component {
         )
     }
 }
-
-// const mapStateToProps = (state) => ({
-//     restaurant: state.restaurant
-// })
 
 export default connect(
     null,
