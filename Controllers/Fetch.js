@@ -2,6 +2,7 @@
 const fetch = require("node-fetch");
 
 exports.list = function list(req, res) {
+    console.log('fetch yelp');
     // create a loop component for the offset value
     // req.params come from the route "/:city,:state" in your routes file
     const URL = "https://api.yelp.com/v3/businesses/search?location=" + req.params.city + "," + req.params.state + "&limit=50"

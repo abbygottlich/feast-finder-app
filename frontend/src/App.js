@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Form from "./components/Form";
-import RestaurantInfo from "./components/RestaurantInfo"
+import RestaurantInfoContainer from "./Containers/RestaurantInfoContainer";
+import Login from "./components/Login";
 
 class App extends Component {
 
@@ -13,20 +14,13 @@ class App extends Component {
     dislikes: []
   }
 
-  loadRatingButtons() {
-    if (this.state.returnedRestaurant.length > 0) {
-      return <div className="ratingButtons">
-        <img onClick={() => this.saveRating("like")} className="likeButton" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
-        <img onClick={() => this.saveRating("dislike")} className="dislikeButton" alt="dislike-button" src="https://image.flaticon.com/icons/svg/126/126504.svg"></img>
-      </div>
-    }
-  }
-
   showRatings = (rating) => {
     fetch("http://localhost:5000/restaurants/" + rating)
       .then(res => res.json())
       .then(restaurants => {
-        console.log(restaurants)
+        this.setState({
+          favorites: restaurants
+        })
       })
     // if (this.state.favorites.length > 0) {
     //   for (let i = 0; i < this.state.favorites.length; i++) {
@@ -34,28 +28,6 @@ class App extends Component {
     //     console.log(this.state.favorites[i])
     //   }
     // }
-  }
-
-  saveRating(rating) {
-    const restaurant = this.state.returnedRestaurant[0]
-    const restaurantBody = {
-      name: restaurant.name,
-      genre: restaurant.categories[0].title,
-      price: restaurant.price,
-      location: restaurant.location.display_address.join(" "),
-      rating: rating
-    }
-    fetch("http://localhost:5000/restaurants", {
-      method: "POST",
-      body: JSON.stringify(restaurantBody),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-      .then(res => res.json())
-      .then(restaurantData => {
-        console.log("restaurant saved!")
-      })
   }
 
   showDislikes() {
@@ -73,16 +45,15 @@ class App extends Component {
       <div className="App">
         <Form />
 
-        <RestaurantInfo returnedRestaurant={this.state.returnedRestaurant} />
+        <RestaurantInfoContainer />
 
         <div className="messagesAndButtons">
-          <div className="hungryMessage">{restaurantLength <= 0 ? "Hungry? Type in your city and state and we'll tell you where to go!" : ""}</div>
-          <div className="regenerateMessage">{restaurantLength > 0 ? "Don't like your result? Click the 'Find Feast' button again." : ""}</div>
-          <div className="ratingMessage">{restaurantLength > 0 ? "Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile." : ""}</div>
-          <div>{this.loadRatingButtons()}</div>
           <div className="myFavorites" onClick={() => this.showRatings("like")}>My Favorites</div>
           <div className="myDislikes" onClick={() => this.showRatings("dislike")}>My Dislikes</div>
+          <div>{this.state.favorites.map(f => <div>{f.name}</div>)}</div>
         </div>
+
+        <Login />
       </div>
     );
   }

@@ -1,11 +1,25 @@
-import * as types from '../Constants'
+import * as actionNames from '../Constants';
+import { combineReducers } from "redux";
 
-export default function restaurants(state, action) {
-    switch (action.type) {
-        case types.RESTAURANT_SUCCESS:
-            return { restaurant: action.payload.restaurant }
-
-        default:
-            return state
+function returnedRestaurant(state = {}, action) {
+    if (action.type === actionNames.RESTAURANT_SUCCESS) {
+        return action.value;
     }
+    return state;
 }
+
+function favorites(state = [], action) {
+    return state;
+}
+
+function dislikes(state = [], action) {
+    return state;
+}
+
+const rootReducer = combineReducers({
+    returnedRestaurant,
+    favorites,
+    dislikes
+});
+
+export default rootReducer;
