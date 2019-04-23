@@ -32,7 +32,7 @@ class RestaurantInfo extends Component {
         })
             .then(res => res.json())
             .then(restaurantData => {
-                console.log("restaurant saved!")
+                console.log("Restaurant Saved!")
             })
     }
 
@@ -62,7 +62,7 @@ class RestaurantInfo extends Component {
                 </div>
 
                 <div className="messagesAndButtons">
-                    <div className="regenerateMessage">Don't like your result? Click the 'Find Feast' button again.</div>
+                    <div className="regenerateMessage">Don't like your result? Click the 'Find A Feast!' button again.</div>
                     <div className="ratingMessage">Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile.</div>
                     <div>{this.loadRatingButtons()}</div>
                 </div>
