@@ -10,11 +10,14 @@ class Form extends Component {
         this.state = {
             city: "",
             USstate: "",
-            returnedRestaurant: []
+            returnedRestaurant: [],
+            toggle: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.restaurantResult = this.restaurantResult.bind(this);
+        this.toggleHandler = this.toggleHandler.bind(this);
+        this.showMenu = this.showMenu.bind(this);
     }
 
     // setting the state equal to what's being typed inside the form fields
@@ -42,11 +45,29 @@ class Form extends Component {
         this.props.fetchRestaurants(this.state.city, this.state.USstate)
     }
 
+    toggleHandler() {
+        if (this.state.toggle === false) {
+            this.setState({
+                toggle: true
+            })
+        } else {
+            this.setState({
+                toggle: false
+            })
+        }
+    }
+
     showMenu() {
-        return <div>
-            <div>Favorites</div>
-            <div>Dislikes</div>
-        </div>
+        if (this.state.toggle === true) {
+            return (
+                <div>
+                    <div>Favorites</div>
+                    <div>Dislikes</div>
+                </div>
+            )
+        } else {
+            return null
+        }
     }
 
     render() {
@@ -59,7 +80,8 @@ class Form extends Component {
                         <button className="submitButton" type="submit">Find a Feast!</button>
                     </div>
                 </form>
-                <button className="menu" onClick={this.showMenu}></button>
+                <button className="menu" onClick={this.toggleHandler}></button>
+                <div>{this.showMenu()}</div>
             </div>
         )
     }
