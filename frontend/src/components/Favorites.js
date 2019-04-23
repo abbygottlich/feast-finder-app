@@ -54,7 +54,10 @@ class Favorites extends Component {
 
     render() {
         return (
-            <div onClick={this.showRestaurantInfo}>{this.state.favorites.map(f => <div onClick={this.handleClick}>{f.name}</div>)}</div>
+            <div className="restaurant-list-bg">
+                <div className="rating-title">Favorites</div>
+                <div className="restaurant-list" onClick={this.showRestaurantInfo}>{this.state.favorites.map(f => <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>)}</div>
+            </div>
         );
     }
 }

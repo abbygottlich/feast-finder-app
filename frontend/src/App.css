@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+/* header */
 .form {
   background-color: #eb5548;
   height: 70px;
@@ -60,6 +61,7 @@
   color: #ffffff;
 }
 
+/* menu */
 .menu, .x {
   float: right;
   width: 35px;
@@ -85,13 +87,6 @@
   background-color: #762b24;
 }
 
-.myFavoritesButton, .myDislikesButton {
-  display: block;
-  height: 50px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 .menu-text {
   font-family: "Raleway";
   font-size: 16px;
@@ -101,12 +96,19 @@
   line-height: 50px;
 }
 
+.myFavoritesButton, .myDislikesButton {
+  display: block;
+  height: 50px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .myFavoritesButton:hover, .myDislikesButton:hover{
   background-color: #eb5548;
 }
 
+/* restaurant info block */
 .restaurantInfo {
-  /* width: 300px; */
   margin: auto;
 }
 
@@ -145,6 +147,7 @@
   border-radius: 20px 20px 20px 20px;
 }
 
+/* messages */
 .hungryMessage {
   width: 500px;
   font-family: "Raleway";
@@ -168,6 +171,7 @@
   margin-top: 20px;
 }
 
+/* like/dislike buttons */
 .ratingButtons {
   display: flex;
   justify-content: space-between;
@@ -189,4 +193,46 @@
 
 .likeButton:active, .dislikeButton:active {
   width: 15px;
+}
+
+/* favorites page */
+.restaurant-list-bg {
+  width: 100%;
+  height: 620px;
+  background-color: #eb5548;
+  background-size: cover;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.rating-title {
+  font-family: "Raleway";
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+}
+
+.restaurant-list {
+  font-family: "Raleway";
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.restaurant-name {
+  width: 600px;
+  margin: auto;
+  margin-top: 15px;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.restaurant-name:hover {
+  background-color: #762b24;
 }
