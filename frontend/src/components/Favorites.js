@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class Favorites extends Component {
 
     state = {
-        favorites: []
+        favorites: [],
+        toggle: false
     }
 
     componentDidMount() {
@@ -23,6 +24,20 @@ class Favorites extends Component {
 
     removeItem = () => {
         console.log("removed!")
+    }
+
+    toggleHandler = () => {
+        if (this.state.toggle === false) {
+            this.setState({
+                toggle: true,
+                // menuIcon: "x"
+            })
+        } else {
+            this.setState({
+                toggle: false,
+                // menuIcon: "menu"
+            })
+        }
     }
 
     handleClick = e => {
