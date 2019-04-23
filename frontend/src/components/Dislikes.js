@@ -23,7 +23,11 @@ class Dislikes extends Component {
 
     render() {
         return (
-            <div>{this.state.dislikes.map(f => <div>{f.name}</div>)}</div>
+            <div>{this.state.dislikes.map(f => <div>{f.name}
+                <button>Remove</button>
+                <button>Move to Favorites</button>
+            </div>)}
+            </div>
         );
     }
 }

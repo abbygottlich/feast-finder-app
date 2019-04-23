@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { url } from 'inspector';
 
 class RestaurantInfo extends Component {
 
@@ -37,18 +38,29 @@ class RestaurantInfo extends Component {
 
     render() {
         // getting props from redux
-        const result = this.props.returnedRestaurant
-        console.log("restuarant info", result)
-
         if (this.props.returnedRestaurant) {
+
+            const result = this.props.returnedRestaurant
+
+            const bgImage = {
+                width: "300px",
+                height: "300px",
+                backgroundImage: "url(" + result.image_url + ")",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat"
+            };
+
             return <div className="restaurantInfo">
-                <div><img className="resultImage" src={result.image_url} alt={result.categories[0].title} /></div>
-                <div className="restaurantTextInfo">
-                    <div className="resultName">{result.name}</div>
-                    <div className="resultCategory">{result.categories[0].title}</div>
-                    <div className="resultPrice">{result.price}</div>
-                    <div className="resultLocation">{result.location.display_address.join(" ")}</div>
+
+                <div className="resultImage" style={bgImage}>
+                    <div className="restaurantTextInfo">
+                        <div className="resultName">{result.name}</div>
+                        <div className="resultCategory">{result.categories[0].title}</div>
+                        <div className="resultPrice">{result.price}</div>
+                        <div className="resultLocation">{result.location.display_address.join(" ")}</div>
+                    </div>
                 </div>
+
                 <div className="messagesAndButtons">
                     <div className="regenerateMessage">Don't like your result? Click the 'Find Feast' button again.</div>
                     <div className="ratingMessage">Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile.</div>

@@ -21,9 +21,17 @@ class Favorites extends Component {
             })
     }
 
+    showRestaurantInfo() {
+        console.log("helllpppppp")
+    }
+
     render() {
         return (
-            <div>{this.state.favorites.map(f => <div>{f.name}</div>)}</div>
+            <div onClick={this.showRestaurantInfo}>{this.state.favorites.map(f => <div>{f.name}
+                <button>Remove</button>
+                <button>Move to Dislikes</button>
+            </div>)}
+            </div>
         );
     }
 }

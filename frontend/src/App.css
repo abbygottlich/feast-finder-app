@@ -98,20 +98,17 @@
 }
 
 .restaurantInfo {
-  position: relative;
   width: 300px;
-  text-align: center;
-  overflow: hidden;
   margin: auto;
 }
 
 .restaurantTextInfo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: #ffffff;
-  width: 250px;
+  width: 300px;
+  height: 230px;
+  border-radius: 20px 20px 20px 20px;
+  background-color: rgba(0,0,0,0.6);
+  padding-top: 70px;
 }
 
 .resultName {
@@ -119,6 +116,8 @@
   font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
+  width: 280px;
+  margin: auto;
 }
 
 .resultCategory, .resultPrice, .resultLocation {
@@ -126,13 +125,15 @@
   font-family: "Georgia";
   font-size: 18px;
   font-style: italic;
+  width: 280px;
+  margin: auto;
 }
 
 .resultImage {
   width: 300px;
+  height: 300px;
   margin-top: 20px;
   border-radius: 20px 20px 20px 20px;
-  filter: brightness(40%);
 }
 
 .hungryMessage {
