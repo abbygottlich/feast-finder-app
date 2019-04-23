@@ -4,7 +4,7 @@ class Favorites extends Component {
 
     state = {
         favorites: [],
-        toggle: false
+        selectedRestaurant: null
     }
 
     componentDidMount() {
@@ -26,27 +26,10 @@ class Favorites extends Component {
         console.log("removed!")
     }
 
-    toggleHandler = () => {
-        if (this.state.toggle === false) {
-            this.setState({
-                toggle: true,
-                // menuIcon: "x"
-            })
-        } else {
-            this.setState({
-                toggle: false,
-                // menuIcon: "menu"
-            })
-        }
-    }
-
     handleClick = e => {
-        let restaurantName = e.target.textContent
-        for (let i = 0; i < this.state.favorites.length; i++) {
-            if (restaurantName === this.state.favorites[i].name) {
-                console.log(this.state.favorites[i].price)
-            }
-        }
+        this.setState({
+            selectedRestaurant: e.target.textContent === this.state.selectedRestaurant ? null : e.target.textContent
+        })
     }
 
     // <button onClick={() => { this.removeItem() }}>Remove</button>
@@ -56,7 +39,11 @@ class Favorites extends Component {
         return (
             <div className="restaurant-list-bg">
                 <div className="rating-title">Favorites</div>
-                <div className="restaurant-list" onClick={this.showRestaurantInfo}>{this.state.favorites.map(f => <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>)}</div>
+                <div className="restaurant-list">{this.state.favorites.map(f => <React.Fragment>
+                    <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>
+                    {f.name === this.state.selectedRestaurant ? <div>{f.price}</div> : null}
+                </React.Fragment>)}</div>
+
             </div>
         );
     }
