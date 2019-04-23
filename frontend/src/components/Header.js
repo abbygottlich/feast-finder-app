@@ -64,9 +64,13 @@ class Header extends Component {
     showMenu() {
         if (this.state.toggle === true) {
             return (
-                <div>
-                    <Link to="/favorites" className="myFavoritesButton">My Favorites</Link>
-                    <Link to="/dislikes" className="myDislikesButton">My Dislikes</Link>
+                <div className="menu-block">
+                    <Link to="/favorites" className="myFavoritesButton">
+                        <div className="menu-text">My Favorites</div>
+                    </Link>
+                    <Link to="/dislikes" className="myDislikesButton">
+                        <div className="menu-text">My Dislikes</div>
+                    </Link>
                 </div>
             )
         } else {

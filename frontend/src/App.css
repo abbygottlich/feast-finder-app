@@ -63,18 +63,38 @@
   background-color: transparent;
   margin-top: -53px;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .x {
   background-image: url("./x-icon.svg");
 }
 
+.menu-block {
+  float: right;
+  width: 300px;
+  height: 100px;
+  background-color: #762b24;
+}
+
 .myFavoritesButton, .myDislikesButton {
-  margin-top: 25px;
-  font-family: "Georgia";
-  font-size: 14px;
-  font-style: italic;
+  display: block;
+  height: 50px;
+  cursor: pointer;
   text-decoration: none;
+}
+
+.menu-text {
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 50px;
+}
+
+.myFavoritesButton:hover, .myDislikesButton:hover{
+  background-color: #eb5548;
 }
 
 .restaurantInfo {
