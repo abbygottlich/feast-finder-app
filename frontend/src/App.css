@@ -49,14 +49,28 @@
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
-.myFavorites, .myDislikes {
+.menu {
+  float: right;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-image: url("./menu.svg");
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-color: transparent;
+  margin-top: -53px;
+  margin-right: 20px;
+}
+
+.myFavoritesButton, .myDislikesButton {
   margin-top: 25px;
   font-family: "Georgia";
   font-size: 14px;
   font-style: italic;
-  /* color: #ffffff; */
+  text-decoration: none;
 }
 
 .restaurantInfo {

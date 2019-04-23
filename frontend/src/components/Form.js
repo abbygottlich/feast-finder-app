@@ -41,15 +41,26 @@ class Form extends Component {
         console.log(this.state.city)
         this.props.fetchRestaurants(this.state.city, this.state.USstate)
     }
+
+    showMenu() {
+        return <div>
+            <div>Favorites</div>
+            <div>Dislikes</div>
+        </div>
+    }
+
     render() {
         return (
-            <form className="form" onSubmit={this.handleSubmit} autoComplete="off" >
-                <div className="formFields">
-                    <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange("city")} className="city-name"></input>
-                    <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange("USstate")} className="state-name" maxLength="2"></input>
-                    <button className="submitButton" type="submit">Find a Feast!</button>
-                </div>
-            </form>
+            <div>
+                <form className="form" onSubmit={this.handleSubmit} autoComplete="off">
+                    <div className="formFields">
+                        <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange("city")} className="city-name"></input>
+                        <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange("USstate")} className="state-name" maxLength="2"></input>
+                        <button className="submitButton" type="submit">Find a Feast!</button>
+                    </div>
+                </form>
+                <button className="menu" onClick={this.showMenu}></button>
+            </div>
         )
     }
 }

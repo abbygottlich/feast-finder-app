@@ -56,7 +56,7 @@ class RestaurantInfo extends Component {
                 </div>
             </div>
         } else {
-            return <div className="hungryMessage">"Hungry? Type in your city and state and we'll tell you where to go!</div>
+            return <div className="hungryMessage">Hungry? Type in your city and state and we'll tell you where to go!</div>
         }
     }
 }
