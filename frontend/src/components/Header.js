@@ -71,6 +71,9 @@ class Header extends Component {
                     <Link to="/dislikes" className="myDislikesButton">
                         <div className="menu-text">My Dislikes</div>
                     </Link>
+                    <div className="myDislikesButton">
+                        <div onClick={this.props.onSignOut} className="menu-text">Sign Out</div>
+                    </div>
                 </div>
             )
         } else {

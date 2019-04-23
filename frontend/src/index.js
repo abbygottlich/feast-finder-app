@@ -8,9 +8,17 @@ import { Provider } from 'react-redux';
 import reducers from './Reducers';
 import thunk from 'redux-thunk';
 import state from "./state";
-import { Route, BrowserRouter as Router } from "react-router-dom";
-import Favorites from "./components/Favorites";
-import Dislikes from "./components/Dislikes";
+
+// calls old Fetch with a new function that adds a header token
+const oldFetch = window.fetch;
+window.fetch = (url, settings = {}) => {
+    return oldFetch(url,
+        {
+            ...settings,
+            headers: { ...settings.headers, authorization: localStorage.getItem("token") }
+        }
+    );
+};
 
 const composeEnhancers = typeof window === "object" &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
@@ -19,19 +27,9 @@ const enhancer = composeEnhancers(applyMiddleware(thunk));
 
 const store = createStore(reducers, state, enhancer)
 
-const Routing = (
-    <Router>
-        <div>
-            <Route exact path="/" component={App} />
-            <Route path="/favorites" component={Favorites} />
-            <Route path="/dislikes" component={Dislikes} />
-        </div>
-    </Router>
-)
-
 ReactDOM.render(
     <Provider store={store}>
-        {Routing}
+        <App />
     </Provider>,
     document.getElementById('root'));
 
