@@ -7,10 +7,10 @@ class Favorites extends Component {
     }
 
     componentDidMount() {
-        this.showRatings('like')
+        this.fetchRatings('like')
     }
 
-    showRatings = (rating) => {
+    fetchRatings = (rating) => {
         fetch("http://localhost:5000/restaurants/" + rating)
             .then(res => res.json())
             .then(restaurants => {
@@ -21,17 +21,25 @@ class Favorites extends Component {
             })
     }
 
-    showRestaurantInfo() {
-        console.log("helllpppppp")
+    removeItem = () => {
+        console.log("removed!")
     }
+
+    handleClick = e => {
+        let restaurantName = e.target.textContent
+        for (let i = 0; i < this.state.favorites.length; i++) {
+            if (restaurantName === this.state.favorites[i].name) {
+                console.log(this.state.favorites[i].price)
+            }
+        }
+    }
+
+    // <button onClick={() => { this.removeItem() }}>Remove</button>
+    //         <button>Move to Dislikes</button>
 
     render() {
         return (
-            <div onClick={this.showRestaurantInfo}>{this.state.favorites.map(f => <div>{f.name}
-                <button>Remove</button>
-                <button>Move to Dislikes</button>
-            </div>)}
-            </div>
+            <div onClick={this.showRestaurantInfo}>{this.state.favorites.map(f => <div onClick={this.handleClick}>{f.name}</div>)}</div>
         );
     }
 }
