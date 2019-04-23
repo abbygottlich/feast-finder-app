@@ -52,7 +52,7 @@
   cursor: pointer;
 }
 
-.menu {
+.menu, .x {
   float: right;
   width: 35px;
   height: 35px;
@@ -63,6 +63,10 @@
   background-color: transparent;
   margin-top: -53px;
   margin-right: 20px;
+}
+
+.x {
+  background-image: url("./x-icon.svg");
 }
 
 .myFavoritesButton, .myDislikesButton {

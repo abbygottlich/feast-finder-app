@@ -12,7 +12,8 @@ class Header extends Component {
             city: "",
             USstate: "",
             returnedRestaurant: [],
-            toggle: false
+            toggle: false,
+            menuIcon: "menu"
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -49,11 +50,13 @@ class Header extends Component {
     toggleHandler() {
         if (this.state.toggle === false) {
             this.setState({
-                toggle: true
+                toggle: true,
+                menuIcon: "x"
             })
         } else {
             this.setState({
-                toggle: false
+                toggle: false,
+                menuIcon: "menu"
             })
         }
     }
@@ -81,7 +84,7 @@ class Header extends Component {
                         <button className="submitButton" type="submit">Find a Feast!</button>
                     </div>
                 </form>
-                <button className="menu" onClick={this.toggleHandler}></button>
+                <button className={this.state.menuIcon} onClick={this.toggleHandler}></button>
                 <div>{this.showMenu()}</div>
             </div>
         )
