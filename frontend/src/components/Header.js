@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import * as action from "../Actions";
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 
-class Form extends Component {
+class Header extends Component {
 
     constructor(props) {
         super(props);
@@ -61,8 +62,8 @@ class Form extends Component {
         if (this.state.toggle === true) {
             return (
                 <div>
-                    <div>Favorites</div>
-                    <div>Dislikes</div>
+                    <Link to="/favorites" className="myFavoritesButton">My Favorites</Link>
+                    <Link to="/dislikes" className="myDislikesButton">My Dislikes</Link>
                 </div>
             )
         } else {
@@ -90,4 +91,4 @@ class Form extends Component {
 export default connect(
     null,
     { fetchRestaurants: action.fetchRestaurant }
-)(Form)
+)(Header)
