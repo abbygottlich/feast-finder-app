@@ -196,6 +196,17 @@
   width: 15px;
 }
 
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;} 
+}
+
+.saved {
+  animation-name: fadeOut;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
 /* favorites and dislikes pages */
 .restaurant-list-bg {
   width: 100%;
