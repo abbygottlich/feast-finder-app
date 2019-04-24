@@ -26,7 +26,7 @@ class SignIn extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit.bind(this)}>
-                <div>Username</div>
+                <div className="title">Sign In</div>
                 <input type="email" name="username" placeholder="Username" className="username-input"
                     onChange={e => {
                         this.setState({ [e.target.name]: e.target.value });
@@ -34,8 +34,6 @@ class SignIn extends Component {
                     value={this.state.username}
                 >
                 </input>
-
-                <div>Password</div>
                 <input type="password" name="password" placeholder="Password" className="password-input"
                     onChange={e => {
                         this.setState({ [e.target.name]: e.target.value });
@@ -43,23 +41,7 @@ class SignIn extends Component {
                     value={this.state.password}
                 >
                 </input>
-
-                {/* <FormGroup>
-          <ControlLabel>Confirm Password</ControlLabel>
-          <FormControl
-            type="password"
-            name="confirmPassword"
-            onChange={e => {
-              this.setState({[e.target.name]: e.target.value});
-            }}
-            placeholder="Confirm Password"
-            value={this.state.confirmPassword}
-          />
-        </FormGroup> */}
-
-                <button type="submit">
-                    Sign In
-       </button>
+                <button className="login-button" type="submit">Sign In</button>
             </form>
         );
     }

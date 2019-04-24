@@ -19,14 +19,17 @@ class SignUpSignIn extends Component {
       <Row>
         <Col xs={8} >
           {this.props.error && this.renderError()}
-          <Tabs defaultActiveKey={1} id="signup-signin-tabs">
-            <Tab eventKey={1}>
-              <SignUp onSignUp={this.props.onSignUp} />
-            </Tab>
-            <Tab eventKey={2}>
-              <SignIn onSignIn={this.props.onSignIn} />
-            </Tab>
-          </Tabs>
+          <div className="login-page">
+            <div className="welcome">Welcome to Feast Finder!</div>
+            <div className="login-sections">
+              <div className="signin-section">
+                <SignIn onSignIn={this.props.onSignIn} />
+              </div>
+              <div className="signup-section">
+                <SignUp onSignUp={this.props.onSignUp} />
+              </div>
+            </div>
+          </div>
         </Col>
       </Row>
     )

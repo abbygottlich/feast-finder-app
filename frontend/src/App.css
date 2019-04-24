@@ -116,7 +116,7 @@
 .restaurantTextInfo {
   color: #ffffff;
   width: 300px;
-  height: 300px;
+  height: 230px;
   border-radius: 20px 20px 20px 20px;
   background-color: rgba(0,0,0,0.7);
   padding-top: 70px;
@@ -196,7 +196,7 @@
   width: 15px;
 }
 
-/* favorites page */
+/* favorites and dislikes pages */
 .restaurant-list-bg {
   width: 100%;
   min-height: 700px;
@@ -293,4 +293,84 @@
 .back-arrow:active {
   width: 45px;
   background-size: 45px;
+}
+
+/* sign in and sing up page */
+.login-page {
+  width: 100%;
+  min-height: 700px;
+  background-color: #eb5548;
+  text-align: center;
+}
+
+.welcome {
+  width: 100%;
+  height: 100px;
+  background-color: #ffffff;
+  font-family: "Raleway";
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #eb5548;
+  line-height: 100px;
+}
+
+.login-sections {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin: auto;
+}
+
+.signin-section, .signup-section {
+  margin-top: 50px;
+}
+
+.title {
+  font-family: "Raleway";
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.username-input, .password-input, .confirm-password-input, .login-button {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  height: 40px;
+  background-color: #eb5548;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.username-input::placeholder, .password-input::placeholder, .confirm-password-input::placeholder, .login-button::placeholder {
+  color: white;
+  text-transform: uppercase;
+}
+
+.login-button {
+  height: 30px;
+  width: 100px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 500px;
+  color: #eb5548;
+  background-color: #ffffff;
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 1s;
+  transition: color 1s;
+}
+
+.login-button:hover {
+  background-color: #762b24;
+  color: #ffffff;
 }
