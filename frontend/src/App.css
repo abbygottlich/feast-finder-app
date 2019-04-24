@@ -8,7 +8,7 @@
   height: 70px;
 }
 
-.formFields {
+.form-fields {
   margin: auto;
   width: 50%;
   display: flex;
@@ -39,7 +39,7 @@
   text-transform: uppercase;
 }
 
-.submitButton {
+.submit-button {
   height: 40px;
   width: 140px;
   margin-top: 13px;
@@ -56,7 +56,7 @@
   transition: color 1s;
 }
 
-.submitButton:hover {
+.submit-button:hover {
   background-color: #762b24;
   color: #ffffff;
 }
@@ -96,24 +96,24 @@
   line-height: 50px;
 }
 
-.myFavoritesButton, .myDislikesButton, .signOutButton {
+.my-favorites-button, .my-dislikes-button, .sign-out-button {
   display: block;
   height: 50px;
   cursor: pointer;
   text-decoration: none;
 }
 
-.myFavoritesButton:hover, .myDislikesButton:hover, .signOutButton:hover {
+.my-favorites-button:hover, .my-dislikes-button:hover, .sign-out-button:hover {
   background-color: #eb5548;
   text-decoration: none;
 }
 
 /* restaurant info block */
-.restaurantInfo {
+.restaurant-info {
   margin: auto;
 }
 
-.restaurantTextInfo {
+.restaurant-text-info {
   color: #ffffff;
   width: 300px;
   height: 230px;
@@ -122,7 +122,7 @@
   padding-top: 70px;
 }
 
-.resultName {
+.result-name {
   font-family: "Raleway";
   font-size: 32px;
   font-weight: bold;
@@ -131,7 +131,7 @@
   margin: auto;
 }
 
-.resultCategory, .resultPrice, .resultLocation {
+.result-category, .result-price, .result-location {
   margin-top: 10px;
   font-family: "Raleway";
   font-size: 18px;
@@ -140,7 +140,7 @@
   margin: auto;
 }
 
-.resultImage {
+.result-image {
   width: 300px;
   height: 300px;
   margin: auto;
@@ -149,7 +149,7 @@
 }
 
 /* messages */
-.hungryMessage {
+.hungry-message {
   width: 500px;
   font-family: "Raleway";
   font-size: 32px;
@@ -160,7 +160,7 @@
   margin-top: 20px;
 }
 
-.regenerateMessage, .ratingMessage {
+.regenerate-message, .rating-message {
   font-family: "Georgia";
   font-size: 18px;
   font-style: italic;
@@ -168,12 +168,12 @@
   margin-top: 10px;
 }
 
-.regenerateMessage {
+.regenerate-message {
   margin-top: 20px;
 }
 
 /* like/dislike buttons */
-.ratingButtons {
+.rating-buttons {
   display: flex;
   justify-content: space-between;
   width: 80px;
@@ -182,17 +182,17 @@
   margin-top: 10px;
 }
 
-.likeButton, .dislikeButton {
+.like-button, .dislike-button {
   width: 20px;
   cursor: pointer;
   transition: width .5s;
 }
 
-.likeButton:hover, .dislikeButton:hover {
+.like-button:hover, .dislike-button:hover {
   width: 25px;
 }
 
-.likeButton:active, .dislikeButton:active {
+.like-button:active, .dislike-button:active {
   width: 15px;
 }
 

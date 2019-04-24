@@ -65,13 +65,13 @@ class Header extends Component {
         if (this.state.toggle === true) {
             return (
                 <div className="menu-block">
-                    <Link to="/favorites" className="myFavoritesButton">
+                    <Link to="/favorites" className="my-favorites-button">
                         <div className="menu-text">My Favorites</div>
                     </Link>
-                    <Link to="/dislikes" className="myDislikesButton">
+                    <Link to="/dislikes" className="my-dislikes-button">
                         <div className="menu-text">My Dislikes</div>
                     </Link>
-                    <div className="signOutButton">
+                    <div className="sign-out-button">
                         <div onClick={this.props.onSignOut} className="menu-text">Sign Out</div>
                     </div>
                 </div>
@@ -85,10 +85,10 @@ class Header extends Component {
         return (
             <div>
                 <form className="form" onSubmit={this.handleSubmit} autoComplete="off">
-                    <div className="formFields">
+                    <div className="form-fields">
                         <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange("city")} className="city-name"></input>
                         <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange("USstate")} className="state-name" maxLength="2"></input>
-                        <button className="submitButton" type="submit">Find a Feast!</button>
+                        <button className="submit-button" type="submit">Find a Feast!</button>
                     </div>
                 </form>
                 <button className={this.state.menuIcon} onClick={this.toggleHandler}></button>

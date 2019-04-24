@@ -9,9 +9,9 @@ class RestaurantInfo extends Component {
     loadRatingButtons() {
         // getting props from redux
         if (this.props.returnedRestaurant) {
-            return <div className="ratingButtons">
-                <img onClick={() => this.saveRating("like")} className="likeButton" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
-                <img onClick={() => this.saveRating("dislike")} className="dislikeButton" alt="dislike-button" src="https://image.flaticon.com/icons/svg/126/126504.svg"></img>
+            return <div className="rating-buttons">
+                <img onClick={() => this.saveRating("like")} className="like-button" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
+                <img onClick={() => this.saveRating("dislike")} className="dislike-button" alt="dislike-button" src="https://image.flaticon.com/icons/svg/126/126504.svg"></img>
             </div>
         }
     }
@@ -55,26 +55,26 @@ class RestaurantInfo extends Component {
                 backgroundRepeat: "no-repeat"
             };
 
-            return <div className="restaurantInfo">
+            return <div className="restaurant-info">
 
-                <div className="resultImage" style={bgImage}>
-                    <div className="restaurantTextInfo">
-                        <div className="resultName">{result.name}</div>
-                        <div className="resultCategory">{result.categories[0].title}</div>
-                        <div className="resultPrice">{result.price}</div>
-                        <div className="resultLocation">{result.location.display_address.join(" ")}</div>
+                <div className="result-image" style={bgImage}>
+                    <div className="restaurant-text-info">
+                        <div className="result-name">{result.name}</div>
+                        <div className="result-category">{result.categories[0].title}</div>
+                        <div className="result-price">{result.price}</div>
+                        <div className="result-location">{result.location.display_address.join(" ")}</div>
                     </div>
                 </div>
 
-                <div className="messagesAndButtons">
-                    <div className="regenerateMessage">Don't like your result? Click the 'Find A Feast!' button again.</div>
-                    <div className="ratingMessage">Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile.</div>
+                <div className="messages-and-buttons">
+                    <div className="regenerate-message">Don't like your result? Click the 'Find A Feast!' button again.</div>
+                    <div className="rating-message">Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile.</div>
                     <div>{this.loadRatingButtons()}</div>
                     {this.state.restaurantSaved === true ? <div className="saved">Saved!</div> : null}
                 </div>
             </div>
         } else {
-            return <div className="hungryMessage">Hungry? Type in your city and state and we'll tell you where to go!</div>
+            return <div className="hungry-message">Hungry? Type in your city and state and we'll tell you where to go!</div>
         }
     }
 }
