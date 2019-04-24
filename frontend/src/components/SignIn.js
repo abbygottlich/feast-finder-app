@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { FormGroup, ControlLabel, FormControl, Button } from "react-bootstrap";
+// import { FormGroup, ControlLabel, FormControl, Button } from "react-bootstrap";
 
 class SignIn extends Component {
     constructor() {
@@ -26,31 +26,23 @@ class SignIn extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit.bind(this)}>
-                <FormGroup>
-                    <ControlLabel>Username</ControlLabel>
-                    <FormControl
-                        type="email"
-                        name="username"
-                        onChange={e => {
-                            this.setState({ [e.target.name]: e.target.value });
-                        }}
-                        placeholder="Enter Username"
-                        value={this.state.username}
-                    />
-                </FormGroup>
+                <div>Username</div>
+                <input type="email" name="username" placeholder="Username" className="username-input"
+                    onChange={e => {
+                        this.setState({ [e.target.name]: e.target.value });
+                    }}
+                    value={this.state.username}
+                >
+                </input>
 
-                <FormGroup>
-                    <ControlLabel>Password</ControlLabel>
-                    <FormControl
-                        type="password"
-                        name="password"
-                        onChange={e => {
-                            this.setState({ [e.target.name]: e.target.value });
-                        }}
-                        placeholder="Enter Password"
-                        value={this.state.password}
-                    />
-                </FormGroup>
+                <div>Password</div>
+                <input type="password" name="password" placeholder="Password" className="password-input"
+                    onChange={e => {
+                        this.setState({ [e.target.name]: e.target.value });
+                    }}
+                    value={this.state.password}
+                >
+                </input>
 
                 {/* <FormGroup>
           <ControlLabel>Confirm Password</ControlLabel>
@@ -65,9 +57,9 @@ class SignIn extends Component {
           />
         </FormGroup> */}
 
-                <Button type="submit">
+                <button type="submit">
                     Sign In
-       </Button>
+       </button>
             </form>
         );
     }
