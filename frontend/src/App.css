@@ -140,6 +140,10 @@
   margin: auto;
 }
 
+.result-price {
+  margin-top: 5px;
+}
+
 .result-image {
   width: 300px;
   height: 300px;
@@ -237,7 +241,7 @@
   margin-top: 30px;
 }
 
-.restaurant-name, .restaurant-info {
+.restaurant-name, .rating-restaurant-info {
   width: 600px;
   font-family: "Raleway";
   font-size: 24px;
@@ -256,7 +260,7 @@
   background-color: #762b24;
 }
 
-.restaurant-info {
+.rating-restaurant-info {
   border-top: none;
   cursor: text;
 }

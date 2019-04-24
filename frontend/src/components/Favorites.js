@@ -85,7 +85,7 @@ class Favorites extends Component {
                             {f.name === this.state.selectedRestaurant ?
 
                                 <React.Fragment>
-                                    <div className="restaurant-info">
+                                    <div className="rating-restaurant-info">
                                         <div>{f.genre}</div>
                                         <div>{f.price}</div>
                                         <div>{f.location}</div>
