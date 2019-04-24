@@ -11,7 +11,7 @@ class Dislikes extends Component {
     }
 
     showRatings = (rating) => {
-        fetch("http://localhost:5000/restaurants/" + rating)
+        fetch("/restaurants/" + rating)
             .then(res => res.json())
             .then(restaurants => {
                 this.setState({

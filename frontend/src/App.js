@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from "./components/Header";
-import RestaurantInfoContainer from "./Containers/RestaurantInfoContainer";
-import Login from "./components/Login";
 import SignUpSignIn from "./components/SignUpSignIn";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/Home";
@@ -24,7 +21,7 @@ class App extends Component {
       });
     } else {
 
-      fetch("http://localhost:5000/api/users", {
+      fetch("/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials)
@@ -48,7 +45,7 @@ class App extends Component {
         signUpSignInError: 'Must Provide All Fields',
       });
     } else {
-      fetch('http://localhost:5000/api/sessions', {
+      fetch('/api/sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credentials),

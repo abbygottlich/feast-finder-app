@@ -2,7 +2,7 @@ import * as types from '../Constants'
 
 export const fetchRestaurant = (city, USstate) => dispatch => {
     console.log('fetchRestaurant action');
-    const apiUrl = "http://localhost:5000/restaurants/"
+    const apiUrl = "/restaurants/"
     const stateName = USstate.toUpperCase()
     const params = city + "," + stateName
     const urlToFetch = apiUrl + params

@@ -83,7 +83,7 @@
 .menu-block {
   float: right;
   width: 300px;
-  height: 100px;
+  height: 150px;
   background-color: #762b24;
 }
 
@@ -96,15 +96,16 @@
   line-height: 50px;
 }
 
-.myFavoritesButton, .myDislikesButton {
+.myFavoritesButton, .myDislikesButton, .signOutButton {
   display: block;
   height: 50px;
   cursor: pointer;
   text-decoration: none;
 }
 
-.myFavoritesButton:hover, .myDislikesButton:hover{
+.myFavoritesButton:hover, .myDislikesButton:hover, .signOutButton:hover {
   background-color: #eb5548;
+  text-decoration: none;
 }
 
 /* restaurant info block */
@@ -115,7 +116,7 @@
 .restaurantTextInfo {
   color: #ffffff;
   width: 300px;
-  height: 230px;
+  height: 300px;
   border-radius: 20px 20px 20px 20px;
   background-color: rgba(0,0,0,0.7);
   padding-top: 70px;
@@ -227,7 +228,7 @@
   width: 600px;
   margin: auto;
   margin-top: 15px;
-  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
   padding-bottom: 5px;
   padding-top: 5px;
   cursor: pointer;
