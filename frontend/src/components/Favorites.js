@@ -26,14 +26,15 @@ class Favorites extends Component {
         console.log("removed!")
     }
 
+    moveToDislikes = () => {
+        console.log("moved to dislikes")
+    }
+
     handleClick = e => {
         this.setState({
             selectedRestaurant: e.target.textContent === this.state.selectedRestaurant ? null : e.target.textContent
         })
     }
-
-    // <button onClick={() => { this.removeItem() }}>Remove</button>
-    //         <button>Move to Dislikes</button>
 
     render() {
         return (
@@ -47,9 +48,15 @@ class Favorites extends Component {
                         {f.name === this.state.selectedRestaurant ?
 
                             <React.Fragment>
-                                <div>{f.price}</div>
-                                <div>{f.genre}</div>
-                                <div>{f.location}</div>
+                                <div className="restaurant-info">
+                                    <div>{f.price}</div>
+                                    <div>{f.genre}</div>
+                                    <div>{f.location}</div>
+                                </div>
+                                <div className="buttons">
+                                    <button onClick={() => { this.removeItem() }} className="button">Remove</button>
+                                    <button onClick={() => { this.moveToDislikes() }} className="button">Move to Dislikes</button>
+                                </div>
                             </React.Fragment> : null}
 
                     </React.Fragment>)}</div>

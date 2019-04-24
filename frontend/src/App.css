@@ -217,20 +217,53 @@
 }
 
 .restaurant-list {
+  margin-top: 30px;
+}
+
+.restaurant-name, .restaurant-info {
+  width: 600px;
   font-family: "Raleway";
   font-size: 24px;
   text-transform: uppercase;
   color: #ffffff;
   text-align: center;
-  margin-top: 30px;
-}
-
-.restaurant-name {
-  width: 600px;
   margin: auto;
   margin-top: 15px;
   border-top: 1px solid #ffffff;
   padding-bottom: 5px;
   padding-top: 5px;
   cursor: pointer;
+}
+
+.restaurant-info {
+  border-top: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+  margin: auto;
+}
+
+.button {
+  height: 40px;
+  width: 170px;
+  margin-top: 13px;
+  border: none;
+  border-radius: 500px;
+  color: #eb5548;
+  background-color: #ffffff;
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 1s;
+  transition: color 1s;
+}
+
+.button:hover {
+  background-color: #762b24;
+  color: #ffffff;
 }
