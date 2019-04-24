@@ -199,7 +199,7 @@
 /* favorites page */
 .restaurant-list-bg {
   width: 100%;
-  height: fit-content;
+  min-height: 700px;
   background-color: #eb5548;
   background-size: cover;
   margin: auto;

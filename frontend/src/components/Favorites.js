@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Home from "./Home";
 
 class Favorites extends Component {
 
     state = {
         favorites: [],
-        selectedRestaurant: null
+        selectedRestaurant: null,
+        toggle: false
     }
 
     componentDidMount() {
@@ -51,6 +53,18 @@ class Favorites extends Component {
             )
     }
 
+    toggleBackButton = () => {
+        if (this.state.toggle === false) {
+            this.setState({
+                toggle: true
+            })
+        } else {
+            this.setState({
+                toggle: false
+            })
+        }
+    }
+
     handleClick = e => {
         this.setState({
             selectedRestaurant: e.target.textContent === this.state.selectedRestaurant ? null : e.target.textContent
@@ -58,33 +72,37 @@ class Favorites extends Component {
     }
 
     render() {
-        return (
-            <div className="restaurant-list-bg">
-                <div className="back-arrow"></div>
-                <div className="rating-title">Favorites</div>
-                <div className="restaurant-list">{this.state.favorites.map(f =>
-                    <React.Fragment>
+        if (this.state.toggle === false) {
+            return (
+                <div className="restaurant-list-bg">
+                    <div className="back-arrow" onClick={this.toggleBackButton}></div>
+                    <div className="rating-title">Favorites</div>
+                    <div className="restaurant-list">{this.state.favorites.map(f =>
+                        <React.Fragment>
 
-                        <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>
+                            <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>
 
-                        {f.name === this.state.selectedRestaurant ?
+                            {f.name === this.state.selectedRestaurant ?
 
-                            <React.Fragment>
-                                <div className="restaurant-info">
-                                    <div>{f.price}</div>
-                                    <div>{f.genre}</div>
-                                    <div>{f.location}</div>
-                                </div>
-                                <div className="buttons">
-                                    <button onClick={() => { this.removeItem() }} className="button">Remove</button>
-                                    <button onClick={() => { this.moveToDislikes() }} className="button">Move to Dislikes</button>
-                                </div>
-                            </React.Fragment> : null}
+                                <React.Fragment>
+                                    <div className="restaurant-info">
+                                        <div>{f.price}</div>
+                                        <div>{f.genre}</div>
+                                        <div>{f.location}</div>
+                                    </div>
+                                    <div className="buttons">
+                                        <button onClick={() => { this.removeItem() }} className="button">Remove</button>
+                                        <button onClick={() => { this.moveToDislikes() }} className="button">Move to Dislikes</button>
+                                    </div>
+                                </React.Fragment> : null}
 
-                    </React.Fragment>)}</div>
+                        </React.Fragment>)}</div>
 
-            </div>
-        );
+                </div>
+            )
+        } else {
+            return <Home />
+        }
     }
 }
 
