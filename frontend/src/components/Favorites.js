@@ -23,11 +23,32 @@ class Favorites extends Component {
     }
 
     removeItem = () => {
-        console.log("removed!")
+        fetch("/restaurants", {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(restaurantData => {
+                console.log("Restaurant Deleted!")
+            })
     }
 
     moveToDislikes = () => {
-        console.log("moved to dislikes")
+        fetch("/restaurants", {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(restaurantData => {
+                console.log("Restaurant Deleted!")
+            })
+            .then(
+                fetch("/restaurants", {
+                    method: "POST"
+                })
+                    .then(res => res.json())
+                    .then(restaurantData => {
+                        console.log("Moved to Dislikes!")
+                    })
+            )
     }
 
     handleClick = e => {
