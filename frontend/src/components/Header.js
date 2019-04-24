@@ -84,14 +84,16 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <form className="form" onSubmit={this.handleSubmit} autoComplete="off">
-                    <div className="form-fields">
-                        <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange("city")} className="city-name"></input>
-                        <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange("USstate")} className="state-name" maxLength="2"></input>
-                        <button className="submit-button" type="submit">Find a Feast!</button>
-                    </div>
-                </form>
-                <button className={this.state.menuIcon} onClick={this.toggleHandler}></button>
+                <div className="header">
+                    <form className="form" onSubmit={this.handleSubmit} autoComplete="off">
+                        <div className="form-fields">
+                            <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange("city")} className="city-name"></input>
+                            <input name="USstate" value={this.state.USstate} placeholder="State" onChange={this.handleChange("USstate")} className="state-name" maxLength="2"></input>
+                            <button className="submit-button" type="submit">Find a Feast!</button>
+                        </div>
+                    </form>
+                    <button className={this.state.menuIcon} onClick={this.toggleHandler}></button>
+                </div>
                 <div>{this.showMenu()}</div>
             </div>
         )
