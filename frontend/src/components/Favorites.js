@@ -86,8 +86,8 @@ class Favorites extends Component {
 
                                 <React.Fragment>
                                     <div className="restaurant-info">
-                                        <div>{f.price}</div>
                                         <div>{f.genre}</div>
+                                        <div>{f.price}</div>
                                         <div>{f.location}</div>
                                     </div>
                                     <div className="buttons">
@@ -100,9 +100,7 @@ class Favorites extends Component {
 
                 </div>
             )
-        } else {
-            return <Home />
-        }
+        } else return <Home />
     }
 }
 
