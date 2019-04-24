@@ -39,10 +39,20 @@ class Favorites extends Component {
         return (
             <div className="restaurant-list-bg">
                 <div className="rating-title">Favorites</div>
-                <div className="restaurant-list">{this.state.favorites.map(f => <React.Fragment>
-                    <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>
-                    {f.name === this.state.selectedRestaurant ? <div>{f.price}</div> : null}
-                </React.Fragment>)}</div>
+                <div className="restaurant-list">{this.state.favorites.map(f =>
+                    <React.Fragment>
+
+                        <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>
+
+                        {f.name === this.state.selectedRestaurant ?
+
+                            <React.Fragment>
+                                <div>{f.price}</div>
+                                <div>{f.genre}</div>
+                                <div>{f.location}</div>
+                            </React.Fragment> : null}
+
+                    </React.Fragment>)}</div>
 
             </div>
         );
