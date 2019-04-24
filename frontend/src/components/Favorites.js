@@ -60,6 +60,7 @@ class Favorites extends Component {
     render() {
         return (
             <div className="restaurant-list-bg">
+                <div className="back-arrow"></div>
                 <div className="rating-title">Favorites</div>
                 <div className="restaurant-list">{this.state.favorites.map(f =>
                     <React.Fragment>

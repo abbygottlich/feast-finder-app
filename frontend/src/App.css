@@ -235,8 +235,13 @@
   cursor: pointer;
 }
 
+.restaurant-name:hover {
+  background-color: #762b24;
+}
+
 .restaurant-info {
   border-top: none;
+  cursor: text;
 }
 
 .buttons {
@@ -266,4 +271,26 @@
 .button:hover {
   background-color: #762b24;
   color: #ffffff;
+}
+
+.back-arrow {
+  width: 50px;
+  height: 50px;
+  background-image: url("./back-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: width 0.5s;
+  transition: background-size 0.5s;
+}
+
+.back-arrow:hover {
+  width: 55px;
+  background-size: 55px;
+}
+
+.back-arrow:active {
+  width: 45px;
+  background-size: 45px;
 }
