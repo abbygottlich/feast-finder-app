@@ -33,23 +33,19 @@ class Favorites extends Component {
             })
     }
 
-    moveToDislikes = () => {
+    moveToDislikes = (restaurant) => {
+        console.log("sdfhlaksdjfhalskjf", restaurant)
+        const fetchRatings = this.fetchRatings
+        restaurant.rating = "dislike"
         fetch("/restaurants", {
-            method: "DELETE"
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(restaurant)
         })
             .then(res => res.json())
             .then(restaurantData => {
-                console.log("Restaurant Deleted!")
+                fetchRatings()
             })
-            .then(
-                fetch("/restaurants", {
-                    method: "POST"
-                })
-                    .then(res => res.json())
-                    .then(restaurantData => {
-                        console.log("Moved to Dislikes!")
-                    })
-            )
     }
 
     handleClick = e => {
@@ -80,7 +76,7 @@ class Favorites extends Component {
                                 </div>
                                 <div className="buttons">
                                     <button onClick={() => { this.removeItem() }} className="button">Remove</button>
-                                    <button onClick={() => { this.moveToDislikes() }} className="button">Move to Dislikes</button>
+                                    <button onClick={() => { this.moveToDislikes(f) }} className="button">Move to Dislikes</button>
                                 </div>
                             </React.Fragment> : null}
 
