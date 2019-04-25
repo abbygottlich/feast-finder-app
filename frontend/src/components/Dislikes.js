@@ -20,7 +20,6 @@ class Dislikes extends Component {
                 this.setState({
                     dislikes: restaurants
                 })
-                console.log(restaurants)
             })
     }
 

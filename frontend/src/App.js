@@ -76,7 +76,6 @@ class App extends Component {
     this.setState({
       authenticated: false
     });
-    console.log("handle sign out")
   }
 
   renderSignUpSignIn = () => {

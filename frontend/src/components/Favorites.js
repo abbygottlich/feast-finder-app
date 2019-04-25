@@ -20,7 +20,6 @@ class Favorites extends Component {
                 this.setState({
                     favorites: restaurants
                 })
-                console.log(restaurants)
             })
     }
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-// import { FormGroup, ControlLabel, FormControl, Button } from "react-bootstrap";
 
 class SignIn extends Component {
     constructor() {
@@ -8,18 +7,15 @@ class SignIn extends Component {
 
         this.state = {
             username: "",
-            password: "",
-            // confirmPassword: "",
+            password: ""
         };
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log('handleSubmit');
         this.props.onSignIn({
             username: this.state.username,
-            password: this.state.password,
-            // confirmPassword: this.state.confirmPassword
+            password: this.state.password
         });
     }
 

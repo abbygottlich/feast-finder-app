@@ -1,7 +1,6 @@
 import * as types from '../Constants'
 
 export const fetchRestaurant = (city, USstate) => dispatch => {
-    console.log('fetchRestaurant action');
     const apiUrl = "/restaurants/"
     const stateName = USstate.toUpperCase()
     const params = city + "," + stateName

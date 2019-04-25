@@ -6,8 +6,9 @@ class RestaurantInfo extends Component {
         restaurantSaved: false
     }
 
+    // all props in this file coming from redux
+
     loadRatingButtons() {
-        // getting props from redux
         if (this.props.returnedRestaurant) {
             return <div className="rating-buttons">
                 <img onClick={() => this.saveRating("like")} className="like-button" alt="like-button" src="https://image.flaticon.com/icons/svg/126/126473.svg"></img>
@@ -17,7 +18,6 @@ class RestaurantInfo extends Component {
     }
 
     saveRating(rating) {
-        // getting props from redux
         const restaurant = this.props.returnedRestaurant
         const restaurantBody = {
             name: restaurant.name,
@@ -35,14 +35,12 @@ class RestaurantInfo extends Component {
         })
             .then(res => res.json())
             .then(restaurantData => {
-                console.log("Restaurant Saved!")
             }).then(this.setState({
                 restaurantSaved: true
             }))
     }
 
     render() {
-        // getting props from redux
         if (this.props.returnedRestaurant) {
 
             const result = this.props.returnedRestaurant

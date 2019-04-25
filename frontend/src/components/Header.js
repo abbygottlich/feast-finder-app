@@ -7,7 +7,6 @@ class Header extends Component {
 
     constructor(props) {
         super(props);
-        // Don't call this.setState() here!
         this.state = {
             city: "",
             USstate: "",
@@ -26,10 +25,8 @@ class Header extends Component {
     handleChange = name => e => {
         const value = e.target.value
         this.setState({
-            // setting 'name' equal to e.target.name
             [name]: value
         })
-        console.log(e.target.value)
     };
 
     restaurantResult(restaurantData) {
@@ -43,7 +40,6 @@ class Header extends Component {
         // prevents the form from being refreshed before it gets submitted
         e.preventDefault()
         // fetching from the backend API
-        console.log(this.state.city)
         this.props.fetchRestaurants(this.state.city, this.state.USstate)
     }
 
