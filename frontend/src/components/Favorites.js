@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Home from "./Home";
+import { Link } from "react-router-dom";
 
 class Favorites extends Component {
 
@@ -52,18 +52,6 @@ class Favorites extends Component {
             )
     }
 
-    toggleBackButton = () => {
-        if (this.state.toggle === false) {
-            this.setState({
-                toggle: true
-            })
-        } else {
-            this.setState({
-                toggle: false
-            })
-        }
-    }
-
     handleClick = e => {
         this.setState({
             selectedRestaurant: e.target.textContent === this.state.selectedRestaurant ? null : e.target.textContent
@@ -71,35 +59,35 @@ class Favorites extends Component {
     }
 
     render() {
-        if (this.state.toggle === false) {
-            return (
-                <div className="restaurant-list-bg">
-                    <div className="back-arrow" onClick={this.toggleBackButton}></div>
-                    <div className="rating-title">Favorites</div>
-                    <div className="restaurant-list">{this.state.favorites.map(f =>
-                        <React.Fragment>
+        return (
+            <div className="restaurant-list-bg">
+                <Link to="/">
+                    <div className="back-arrow"></div>
+                </Link>
+                <div className="rating-title">Favorites</div>
+                <div className="restaurant-list">{this.state.favorites.map(f =>
+                    <React.Fragment>
 
-                            <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>
+                        <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>
 
-                            {f.name === this.state.selectedRestaurant ?
+                        {f.name === this.state.selectedRestaurant ?
 
-                                <React.Fragment>
-                                    <div className="rating-restaurant-info">
-                                        <div>{f.genre}</div>
-                                        <div>{f.price}</div>
-                                        <div>{f.location}</div>
-                                    </div>
-                                    <div className="buttons">
-                                        <button onClick={() => { this.removeItem() }} className="button">Remove</button>
-                                        <button onClick={() => { this.moveToDislikes() }} className="button">Move to Dislikes</button>
-                                    </div>
-                                </React.Fragment> : null}
+                            <React.Fragment>
+                                <div className="rating-restaurant-info">
+                                    <div>{f.genre}</div>
+                                    <div>{f.price}</div>
+                                    <div>{f.location}</div>
+                                </div>
+                                <div className="buttons">
+                                    <button onClick={() => { this.removeItem() }} className="button">Remove</button>
+                                    <button onClick={() => { this.moveToDislikes() }} className="button">Move to Dislikes</button>
+                                </div>
+                            </React.Fragment> : null}
 
-                        </React.Fragment>)}</div>
+                    </React.Fragment>)}</div>
 
-                </div>
-            )
-        } else return <Home />
+            </div>
+        )
     }
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Home from "./Home";
+import { Link } from "react-router-dom";
 
 class Dislikes extends Component {
 
@@ -52,18 +53,6 @@ class Dislikes extends Component {
             )
     }
 
-    toggleBackButton = () => {
-        if (this.state.toggle === false) {
-            this.setState({
-                toggle: true
-            })
-        } else {
-            this.setState({
-                toggle: false
-            })
-        }
-    }
-
     handleClick = e => {
         this.setState({
             selectedRestaurant: e.target.textContent === this.state.selectedRestaurant ? null : e.target.textContent
@@ -74,7 +63,9 @@ class Dislikes extends Component {
         if (this.state.toggle === false) {
             return (
                 <div className="restaurant-list-bg">
-                    <div className="back-arrow" onClick={this.toggleBackButton}></div>
+                    <Link to="/">
+                        <div className="back-arrow"></div>
+                    </Link>
                     <div className="rating-title">Dislikes</div>
                     <div className="restaurant-list">{this.state.dislikes.map(f =>
                         <React.Fragment>
