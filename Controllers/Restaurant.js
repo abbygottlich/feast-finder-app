@@ -37,13 +37,10 @@ exports.update = function update(request, response) {
 };
 
 // DELETE
-// exports.create = function create(request, response) {
-//     const newRestaurant = new Restaurant(
-//         request.body
-//     );
-//     // TODO: set userId to current user once authentication is set up
-//     newRestaurant.userId = request.user._id // this will come from request.user._id, when authentication is implemented
-//     newRestaurant.save().then(savedRestaurant => {
-//         response.json(savedRestaurant);
-//     });
-// };
+exports.remove = function remove(request, response) {
+    const id = request.params.id
+    Restaurant.remove({ _id: id })
+        .then(() => {
+            response.send("deleted");
+        });
+};

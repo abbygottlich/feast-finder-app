@@ -23,13 +23,14 @@ class Favorites extends Component {
             })
     }
 
-    removeItem = () => {
-        fetch("/restaurants", {
+    removeItem = (id) => {
+        const fetchRatings = this.fetchRatings
+        fetch("/restaurants/" + id, {
             method: "DELETE"
         })
-            .then(res => res.json())
-            .then(restaurantData => {
-                console.log("Restaurant Deleted!")
+            .then(status => {
+                console.log("Restaurant Deleted!", status)
+                fetchRatings()
             })
     }
 
@@ -75,7 +76,7 @@ class Favorites extends Component {
                                     <div>{f.location}</div>
                                 </div>
                                 <div className="buttons">
-                                    <button onClick={() => { this.removeItem() }} className="button">Remove</button>
+                                    <button onClick={() => { this.removeItem(f._id) }} className="button">Remove</button>
                                     <button onClick={() => { this.moveToDislikes(f) }} className="button">Move to Dislikes</button>
                                 </div>
                             </React.Fragment> : null}
