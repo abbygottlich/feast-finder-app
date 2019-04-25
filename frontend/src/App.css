@@ -9,7 +9,12 @@
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #eb5548;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .form {
@@ -18,7 +23,7 @@
 
 .form-fields {
   margin: auto;
-  width: 50%;
+  width: 500px;
   display: flex;
   align-content: center;
   justify-content: space-between;
@@ -79,8 +84,6 @@
   background-repeat: no-repeat;
   background-size: 35px;
   background-color: transparent;
-  margin-top: -53px;
-  margin-right: 20px;
   cursor: pointer;
 }
 
@@ -340,6 +343,7 @@
 }
 
 .welcome {
+  display: flex;
   width: 100%;
   height: 100px;
   background-color: #ffffff;
@@ -349,6 +353,29 @@
   text-transform: uppercase;
   color: #eb5548;
   line-height: 100px;
+}
+
+.logo {
+  width: 55px;
+  background-image: url("./logo.png");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.logo-white {
+  width: 55px;
+  height: 41px;
+  background-image: url("./logo-white.png");
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
+.welcome-text {
+  width: 100%;
+  text-align: center;
+  margin-right: 20px;
 }
 
 .login-sections {
@@ -430,13 +457,17 @@
     justify-content: space-between;
   }
 
+  .logo-white {
+    margin-top: 15px;
+  }
+
   .form {
     height: 200px;
   }
 
   .menu, .x {
     margin-top: 15px;
-    margin-right: 30px;
+    margin-right: 0px;
   }
 
   .menu-block {
@@ -482,6 +513,15 @@
 
   .welcome, .title {
     font-size: 20px;
+  }
+
+  .logo {
+    background-size: 25px;
+    margin-top: 30px;
+  }
+
+  .form-fields {
+    width: 224px;
   }
 
   .hungry-message, .restaurant-name, .rating-restaurant-info, .login-sections {

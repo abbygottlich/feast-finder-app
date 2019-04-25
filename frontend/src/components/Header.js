@@ -85,6 +85,7 @@ class Header extends Component {
         return (
             <div>
                 <div className="header">
+                    <div class="logo-white"></div>
                     <form className="form" onSubmit={this.handleSubmit} autoComplete="off">
                         <div className="form-fields">
                             <input name="city" value={this.state.city} placeholder="City" onChange={this.handleChange("city")} className="city-name"></input>
