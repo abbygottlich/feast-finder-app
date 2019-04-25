@@ -20,7 +20,9 @@ class SignUpSignIn extends Component {
         <Col xs={8} >
           {this.props.error && this.renderError()}
           <div className="login-page">
-            <div className="welcome">Welcome to Feast Finder!</div>
+            <div className="welcome">
+              <div>
+              </div>Welcome to Feast Finder!</div>
             <div className="login-sections">
               <div className="signin-section">
                 <SignIn onSignIn={this.props.onSignIn} />

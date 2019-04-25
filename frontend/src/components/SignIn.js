@@ -25,7 +25,7 @@ class SignIn extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
+            <form autoComplete="off" onSubmit={this.handleSubmit.bind(this)}>
                 <div className="title">Sign In</div>
                 <input type="email" name="username" placeholder="Username" className="username-input"
                     onChange={e => {
