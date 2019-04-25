@@ -2,6 +2,6 @@ This app was created to solve the biggest problem known to man...deciding where 
 
 The restaurant information is fetched from the Yelp API. All user input is tracked and stored in mLab. This project also includes authentication so that users may sign in with their own credentials to view personal information.
 
-Future functionality includes the ability to search through the user's likes and dislikes by city, and the ability to fetch more than the first 50 restaurants from each city on Yelp.
+Future functionality includes the ability to search through the user's likes and dislikes by city, the ability to fetch more than the first 50 restaurants from each city on Yelp, and additional error handling.
 
 Have fun generating and exploring your city's food scene!
