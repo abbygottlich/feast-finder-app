@@ -402,12 +402,20 @@
 /* ------------------------------ FOR MOBILE ------------------------------ */
 
 @media only screen and (max-width: 600px) {
-  /* .App{
-    text-align: left;
-  } */
+
+  .App {
+    display: block;
+    position: relative;
+  }
 
   .welcome, .title {
     font-size: 36px;
+  }
+
+  .header-component {
+    display: block;
+    position: relative;
+    z-index: 2;
   }
 
   .header {
@@ -456,6 +464,12 @@
     width: fit-content;
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  .restaurant-info-component {
+    display: block;
+    position: absolute;
+    z-index: 1;
   }
 
   .messages-and-buttons {

@@ -8,8 +8,12 @@ class Home extends Component {
 
         return (
             <div className="App">
-                <Header onSignOut={this.props.onSignOut} showNavItems={this.props.authenticated} />
-                <RestaurantInfoContainer />
+                <div class="header-component">
+                    <Header onSignOut={this.props.onSignOut} showNavItems={this.props.authenticated} />
+                </div>
+                <div className="restaurant-info-component">
+                    <RestaurantInfoContainer />
+                </div>
             </div>
         );
     }
