@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "env-cmd": "^8.0.2",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.4",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.8.4",
@@ -16,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "env-cmd .env.production npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +30,6 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "homepage": "https://abbygottlich.github.io/feast-finder-app"
 }
