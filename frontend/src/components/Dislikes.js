@@ -32,7 +32,7 @@ class Dislikes extends Component {
                 console.log("Restaurant Deleted!", status)
                 fetchRatings()
             })
-        // .then(document.location.reload(true))
+            .then(document.location.reload(true))
     }
 
     moveToLikes = (restaurant) => {
