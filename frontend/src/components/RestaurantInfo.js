@@ -26,7 +26,7 @@ class RestaurantInfo extends Component {
             location: restaurant.location.display_address.join(" "),
             rating: rating
         }
-        fetch(`${process.env.REACT_APP_API_URL}/api/restaurants`, {
+        fetch(`${process.env.REACT_APP_API_URL}/restaurants`, {
             method: "POST",
             body: JSON.stringify(restaurantBody),
             headers: {
