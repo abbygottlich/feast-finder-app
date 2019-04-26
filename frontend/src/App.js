@@ -91,7 +91,7 @@ class App extends Component {
   renderApp() {
     return (
 
-      <Router>
+      <Router basename={process.env.REACT_APP_BASENAME}>
         <div>
           <Route exact path="/" component={() => <Home onSignOut={this.handleSignOut} authenticated={this.state.authenticated} />} />
           <Route path="/favorites" component={Favorites} />
