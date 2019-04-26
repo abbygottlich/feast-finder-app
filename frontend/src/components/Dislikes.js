@@ -32,7 +32,7 @@ class Dislikes extends Component {
                 console.log("Restaurant Deleted!", status)
                 fetchRatings()
             })
-            .then(document.location.reload(true))
+        // .then(document.location.reload(true))
     }
 
     moveToLikes = (restaurant) => {
@@ -47,7 +47,8 @@ class Dislikes extends Component {
             .then(res => res.json())
             .then(restaurantData => {
                 fetchRatings()
-            }).then(document.location.reload(true))
+            })
+        // .then(document.location.reload(true))
     }
 
     handleClick = e => {
