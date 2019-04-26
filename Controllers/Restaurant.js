@@ -1,4 +1,4 @@
-const Restaurant = require("../models/Restaurant");
+const Restaurant = require("../Models/Restaurant");
 
 // GET request
 exports.list = function list(request, response) {

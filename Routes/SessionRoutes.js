@@ -1,5 +1,5 @@
 const express = require("express");
-const {create} = require( "../controllers/SessionController");
+const { create } = require("../Controllers/SessionController");
 const router = express.Router();
 
 router.post("/api/sessions", create);
