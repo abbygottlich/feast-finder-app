@@ -30,7 +30,8 @@ class Favorites extends Component {
             .then(status => {
                 console.log("Restaurant Deleted!", status)
                 fetchRatings()
-            }).then(document.location.reload(true))
+            })
+        // .then(document.location.reload(true))
     }
 
     moveToDislikes = (restaurant) => {
