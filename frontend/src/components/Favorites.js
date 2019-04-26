@@ -13,7 +13,7 @@ class Favorites extends Component {
     }
 
     fetchRatings = (rating) => {
-        fetch("/api/restaurants/" + rating)
+        fetch("/restaurants/" + rating)
             .then(res => res.json())
             .then(restaurants => {
                 this.setState({
