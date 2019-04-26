@@ -26,7 +26,7 @@ class RestaurantInfo extends Component {
             location: restaurant.location.display_address.join(" "),
             rating: rating
         }
-        fetch("/api/restaurants", {
+        fetch("/restaurants", {
             method: "POST",
             body: JSON.stringify(restaurantBody),
             headers: {
