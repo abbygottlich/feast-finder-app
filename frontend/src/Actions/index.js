@@ -1,7 +1,7 @@
 import * as types from '../Constants'
 
 export const fetchRestaurant = (city, USstate) => dispatch => {
-    const apiUrl = `${process.env.REACT_APP_API_URL}/restaurants/`
+    const apiUrl = `${process.env.REACT_APP_API_URL}/api/restaurants/`
     const stateName = USstate.toUpperCase()
     const params = city + "," + stateName
     const urlToFetch = apiUrl + params
