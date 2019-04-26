@@ -13,7 +13,7 @@ class Favorites extends Component {
     }
 
     fetchRatings = (rating) => {
-        fetch("/restaurants/" + rating)
+        fetch(`${process.env.REACT_APP_API_URL}/restaurants/` + rating)
             .then(res => res.json())
             .then(restaurants => {
                 this.setState({
