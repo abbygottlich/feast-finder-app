@@ -6,8 +6,7 @@ class Dislikes extends Component {
 
     state = {
         dislikes: [],
-        selectedRestaurant: null,
-        toggle: false
+        selectedRestaurant: null
     }
 
     componentDidMount() {
@@ -24,33 +23,30 @@ class Dislikes extends Component {
             })
     }
 
-    removeItem = () => {
-        fetch("/restaurants", {
+    removeItem = (id) => {
+        const fetchRatings = this.fetchRatings
+        fetch("/restaurants/" + id, {
             method: "DELETE"
         })
-            .then(res => res.json())
-            .then(restaurantData => {
-                console.log("Restaurant Deleted!")
+            .then(status => {
+                console.log("Restaurant Deleted!", status)
+                fetchRatings()
             })
     }
 
-    moveToLikes = () => {
+    moveToLikes = (restaurant) => {
+        console.log("sdfhlaksdjfhalskjf", restaurant)
+        const fetchRatings = this.fetchRatings
+        restaurant.rating = "like"
         fetch("/restaurants", {
-            method: "DELETE"
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(restaurant)
         })
             .then(res => res.json())
             .then(restaurantData => {
-                console.log("Restaurant Deleted!")
+                fetchRatings()
             })
-            .then(
-                fetch("/restaurants", {
-                    method: "POST"
-                })
-                    .then(res => res.json())
-                    .then(restaurantData => {
-                        console.log("Moved to Likes!")
-                    })
-            )
     }
 
     handleClick = e => {
@@ -60,36 +56,34 @@ class Dislikes extends Component {
     }
 
     render() {
-        if (this.state.toggle === false) {
-            return (
-                <div className="restaurant-list-bg">
-                    <Link to="/">
-                        <div className="back-arrow"></div>
-                    </Link>
-                    <div className="rating-title">Dislikes</div>
-                    <div className="restaurant-list">{this.state.dislikes.map(f =>
-                        <React.Fragment>
+        return (
+            <div className="restaurant-list-bg">
+                <Link to="/">
+                    <div className="back-arrow"></div>
+                </Link>
+                <div className="rating-title">Dislikes</div>
+                <div className="restaurant-list">{this.state.dislikes.map(f =>
+                    <React.Fragment>
 
-                            <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>
+                        <div className="restaurant-name" onClick={this.handleClick}>{f.name}</div>
 
-                            {f.name === this.state.selectedRestaurant ?
+                        {f.name === this.state.selectedRestaurant ?
 
-                                <React.Fragment>
-                                    <div className="rating-restaurant-info">
-                                        <div>{f.genre}</div>
-                                        <div>{f.price}</div>
-                                        <div>{f.location}</div>
-                                    </div>
-                                    <div className="buttons">
-                                        <button onClick={() => { this.removeItem() }} className="button">Remove</button>
-                                        <button onClick={() => { this.moveToLikes() }} className="button">Move to Likes</button>
-                                    </div>
-                                </React.Fragment> : null}
+                            <React.Fragment>
+                                <div className="rating-restaurant-info">
+                                    <div>{f.genre}</div>
+                                    <div>{f.price}</div>
+                                    <div>{f.location}</div>
+                                </div>
+                                <div className="buttons">
+                                    <button onClick={() => { this.removeItem(f._id) }} className="button">Remove</button>
+                                    <button onClick={() => { this.moveToLikes(f) }} className="button">Move to Likes</button>
+                                </div>
+                            </React.Fragment> : null}
 
-                        </React.Fragment>)}</div>
-                </div>
-            )
-        } else return <Home />
+                    </React.Fragment>)}</div>
+            </div>
+        )
     }
 }
 

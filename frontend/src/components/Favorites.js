@@ -5,8 +5,7 @@ class Favorites extends Component {
 
     state = {
         favorites: [],
-        selectedRestaurant: null,
-        toggle: false
+        selectedRestaurant: null
     }
 
     componentDidMount() {
@@ -76,6 +75,8 @@ class Favorites extends Component {
                                     <div>{f.location}</div>
                                 </div>
                                 <div className="buttons">
+                                    <div onClick="document.location.reload(true)">
+                                    </div>
                                     <button onClick={() => { this.removeItem(f._id) }} className="button">Remove</button>
                                     <button onClick={() => { this.moveToDislikes(f) }} className="button">Move to Dislikes</button>
                                 </div>
