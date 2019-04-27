@@ -29,7 +29,8 @@ class Favorites extends Component {
         })
             .then(status => {
                 console.log("Restaurant Deleted!", status)
-                fetchRatings()
+                const rating = "like"
+                fetchRatings(rating)
             })
         // .then(document.location.reload(true))
     }
