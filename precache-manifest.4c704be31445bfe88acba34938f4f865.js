@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/feast-finder-app/static/js/runtime~main.ae26ca81.js"
   },
   {
-    "revision": "d7345fabb1bb8953acf3",
+    "revision": "dde45809d528836d323c",
     "url": "/feast-finder-app/static/js/main.8746fba7.chunk.js"
   },
   {
@@ -24,11 +24,11 @@ self.__precacheManifest = [
     "url": "/feast-finder-app/static/js/2.7b0ed173.chunk.js"
   },
   {
-    "revision": "d7345fabb1bb8953acf3",
-    "url": "/feast-finder-app/static/css/main.b72ddf9e.chunk.css"
+    "revision": "dde45809d528836d323c",
+    "url": "/feast-finder-app/static/css/main.2f5e817e.chunk.css"
   },
   {
-    "revision": "9dfdeb59a734a08e9139b46402bcbd4d",
+    "revision": "1063fef12efcfe4a62a04d2e0f6d625c",
     "url": "/feast-finder-app/index.html"
   }
 ];
