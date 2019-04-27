@@ -27,17 +27,12 @@ class Dislikes extends Component {
         fetch(`${process.env.REACT_APP_API_URL}/restaurants/` + id, {
             method: "DELETE"
         })
-            .then(
-                (res => res.json())
-            )
-            .then(restaurants => {
-                console.log(restaurants)
-                this.setState({
-                    favorites: restaurants
-                })
-                fetchRatings()
-                // .then(document.location.reload(true))
+            .then(status => {
+                console.log("Restaurant Deleted!", status)
+                const rating = "dislike"
+                fetchRatings(rating)
             })
+        // .then(document.location.reload(true))
     }
 
     moveToLikes = (restaurant) => {
@@ -64,7 +59,7 @@ class Dislikes extends Component {
 
     render() {
         return (
-            <div className="restaurant-list-bg" >
+            <div className="restaurant-list-bg">
                 <Link to="/">
                     <div className="back-arrow"></div>
                 </Link>
