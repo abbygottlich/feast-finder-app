@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "env-cmd .env.production npm run build && gh-pages -d build"
+    "deploy": "env-cmd .env.production npm run build && cp build/index.html build/404.html && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
