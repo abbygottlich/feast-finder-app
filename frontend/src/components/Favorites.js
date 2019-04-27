@@ -47,7 +47,7 @@ class Favorites extends Component {
             .then(restaurantData => {
                 fetchRatings()
             })
-        // .then(document.location.reload(true))
+            .then(document.location.reload(true))
     }
 
     handleClick = e => {
