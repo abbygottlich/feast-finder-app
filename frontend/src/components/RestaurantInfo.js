@@ -76,7 +76,9 @@ class RestaurantInfo extends Component {
                     {this.state.restaurantSaved === true ? <div className="saved">Saved!</div> : null}
                 </div>
             </div>
-        } else {
+        } else if (this.props.returnedRestaurant === null && this.props.inputFail === 2) {
+            return <div className="hungry-message">Please type in a city and state to receive a restaurant suggestion.</div>
+        } else if (this.props.returnedRestaurant === null && this.props.inputFail === 1) {
             return <div className="hungry-message">Hungry? Type in your city and state and we'll tell you where to go!</div>
         }
     }

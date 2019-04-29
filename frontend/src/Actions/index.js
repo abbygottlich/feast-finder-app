@@ -1,4 +1,5 @@
 import * as types from '../Constants'
+import state from '../state';
 
 export const fetchRestaurant = (city, USstate) => dispatch => {
     if (city && USstate) {
@@ -30,6 +31,7 @@ export const fetchRestaurant = (city, USstate) => dispatch => {
                 })
             )
     } else dispatch({
-        type: types.INPUT_FAIL
+        type: types.INPUT_FAIL,
+        value: state.inputFail + 1
     })
 }

@@ -1,3 +1,4 @@
 export default {
-    returnedRestaurant: null
+    returnedRestaurant: null,
+    inputFail: 1
 }
