@@ -26,7 +26,8 @@ class RestaurantInfo extends Component {
             location: restaurant.location.display_address.join(" "),
             rating: rating
         }
-        fetch(`${process.env.REACT_APP_API_URL}/restaurants`, {
+        // ${process.env.REACT_APP_API_URL}
+        fetch(`/restaurants`, {
             method: "POST",
             body: JSON.stringify(restaurantBody),
             headers: {
@@ -56,11 +57,15 @@ class RestaurantInfo extends Component {
             return <div className="restaurant-info">
 
                 <div className="result-image" style={bgImage}>
-                    <div className="restaurant-text-info">
-                        <div className="result-name">{result.name}</div>
-                        <div className="result-category">{result.categories[0].title}</div>
-                        <div className="result-price">{result.price}</div>
-                        <div className="result-location">{result.location.display_address.join(" ")}</div>
+                    <div className="restaurant-info-and-overlay">
+                        <div className="restaurant-text-info">
+                            <div className="text">
+                                <div className="result-name">{result.name}</div>
+                                <div className="result-category">{result.categories[0].title}</div>
+                                <div className="result-price">{result.price}</div>
+                                <div className="result-location">{result.location.display_address.join(" ")}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

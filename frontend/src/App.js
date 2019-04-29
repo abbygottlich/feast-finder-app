@@ -21,7 +21,8 @@ class App extends Component {
       });
     } else {
 
-      fetch(`${process.env.REACT_APP_API_URL}/api/users`, {
+      // ${process.env.REACT_APP_API_URL}
+      fetch(`/api/users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials)
@@ -45,7 +46,8 @@ class App extends Component {
         signUpSignInError: 'Must Provide All Fields',
       });
     } else {
-      fetch(`${process.env.REACT_APP_API_URL}/api/sessions`, {
+      // ${process.env.REACT_APP_API_URL}
+      fetch(`/api/sessions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credentials),

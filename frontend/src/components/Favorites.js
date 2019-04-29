@@ -13,7 +13,8 @@ class Favorites extends Component {
     }
 
     fetchRatings = (rating) => {
-        fetch(`${process.env.REACT_APP_API_URL}/restaurants/` + rating)
+        // ${process.env.REACT_APP_API_URL}
+        fetch(`/restaurants/` + rating)
             .then(res => res.json())
             .then(restaurants => {
                 this.setState({
@@ -24,7 +25,8 @@ class Favorites extends Component {
 
     removeItem = (id) => {
         const fetchRatings = this.fetchRatings
-        fetch(`${process.env.REACT_APP_API_URL}/restaurants/` + id, {
+        // ${process.env.REACT_APP_API_URL}
+        fetch(`/restaurants/` + id, {
             method: "DELETE"
         })
             .then(status => {
@@ -39,7 +41,8 @@ class Favorites extends Component {
         console.log("sdfhlaksdjfhalskjf", restaurant)
         const fetchRatings = this.fetchRatings
         restaurant.rating = "dislike"
-        fetch(`${process.env.REACT_APP_API_URL}/restaurants`, {
+        // ${process.env.REACT_APP_API_URL}
+        fetch(`/restaurants`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(restaurant)
