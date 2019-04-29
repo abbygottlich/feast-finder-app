@@ -29,5 +29,7 @@ export const fetchRestaurant = (city, USstate) => dispatch => {
                     type: types.RESTAURANT_FAIL
                 })
             )
-    } else console.log("no city or state")
+    } else dispatch({
+        type: types.INPUT_FAIL
+    })
 }
