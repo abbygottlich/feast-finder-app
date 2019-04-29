@@ -8,8 +8,4 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantInfo)
+export default connect(mapStateToProps, null)(RestaurantInfo)

@@ -8,7 +8,7 @@ class Home extends Component {
 
         return (
             <div className="App">
-                <div class="header-component">
+                <div className="header-component">
                     <Header onSignOut={this.props.onSignOut} showNavItems={this.props.authenticated} />
                 </div>
                 <div className="restaurant-info-component">
