@@ -18,7 +18,6 @@ class SignUpSignIn extends Component {
     return (
       <Row>
         <Col xs={8} >
-          {this.props.error && this.renderError()}
           <div className="login-page">
             <div className="welcome">
               <div className="logo"></div>
@@ -32,6 +31,7 @@ class SignUpSignIn extends Component {
                 <SignUp onSignUp={this.props.onSignUp} />
               </div>
             </div>
+            {this.props.error && this.renderError()}
           </div>
         </Col>
       </Row>
