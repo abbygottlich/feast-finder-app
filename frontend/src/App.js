@@ -17,7 +17,7 @@ class App extends Component {
     const { username, password, confirmPassword } = credentials;
     if (!username.trim() || !password.trim() || !confirmPassword.trim()) {
       this.setState({
-        signUpSignInError: "Please Provide All Fields"
+        signUpSignInError: "Please provide all fields."
       });
     } else if (password.trim() !== confirmPassword.trim()) {
       this.setState({
@@ -47,7 +47,7 @@ class App extends Component {
     const { username, password } = credentials;
     if (!username.trim() || !password.trim()) {
       this.setState({
-        signUpSignInError: 'Please Provide All Fields',
+        signUpSignInError: 'Please provide all fields.',
       });
     } else {
       // ${process.env.REACT_APP_API_URL}
@@ -60,7 +60,7 @@ class App extends Component {
           if (res.status === 401) {
             console.log('invalid login');
             this.setState({
-              signUpSignInError: 'Invalid login. Please try typing in your credentials again.',
+              signUpSignInError: 'Invalid login.',
             });
           } else {
             return res.json();

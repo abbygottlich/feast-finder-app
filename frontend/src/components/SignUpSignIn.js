@@ -9,7 +9,7 @@ class SignUpSignIn extends Component {
   renderError() {
     return (
       <Alert bsStyle="danger">
-        <strong>{this.props.error}</strong>
+        <div className="error-message">{this.props.error}</div>
       </Alert>
     );
   }
