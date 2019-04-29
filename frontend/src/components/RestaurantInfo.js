@@ -42,7 +42,8 @@ class RestaurantInfo extends Component {
     }
 
     render() {
-        if (this.props.returnedRestaurant) {
+        // if there is a returned restaurant and the city/state blanks are filled in, return the restaurant
+        if (this.props.returnedRestaurant && this.props.inputFail === 1) {
 
             const result = this.props.returnedRestaurant
 
@@ -76,11 +77,12 @@ class RestaurantInfo extends Component {
                     {this.state.restaurantSaved === true ? <div className="saved">Saved!</div> : null}
                 </div>
             </div>
-        } else if (this.props.returnedRestaurant === null && this.props.inputFail === 2) {
-            return <div className="hungry-message">Please type in a city and state to receive a restaurant suggestion.</div>
-        } else if (this.props.returnedRestaurant === null && this.props.inputFail === 1) {
-            return <div className="hungry-message">Hungry? Type in your city and state and we'll tell you where to go!</div>
         }
+        // if the city/state blanks are not filled in, return the error message
+        else if (this.props.inputFail === 2) {
+            return <div className="hungry-message">Please type in a city and state to receive a restaurant suggestion.</div>
+            // if there is no returned restaurant and the city/state fields are blank, return the hungry message 
+        } else return <div className="hungry-message">Hungry? Type in your city and state and we'll tell you where to go!</div>
     }
 }
 
