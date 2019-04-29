@@ -19,6 +19,10 @@ class App extends Component {
       this.setState({
         signUpSignInError: "Please Provide All Fields"
       });
+    } else if (password.trim() !== confirmPassword.trim()) {
+      this.setState({
+        signUpSignInError: "Passwords do not match."
+      });
     } else {
 
       // ${process.env.REACT_APP_API_URL}
