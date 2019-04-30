@@ -30,16 +30,30 @@ class App extends Component {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials)
-      }).then((res) => {
-        return res.json();
-      }).then((data) => {
-        const { token } = data;
-        localStorage.setItem("token", token);
-        this.setState({
-          signUpSignInError: "",
-          authenticated: token
-        });
-      });
+      })
+        .then((res) => {
+          if (res.status === 422) {
+            res.json()
+              .then(
+                () => {
+                  console.log('username already exists');
+                  this.setState({
+                    signUpSignInError: "Username already exists."
+                  });
+                }
+              )
+          } else {
+            res.json().then(
+              (token) => {
+                localStorage.setItem('token', token);
+                this.setState({
+                  signUpSignInError: '',
+                  authenticated: token,
+                });
+              }
+            )
+          }
+        })
     }
   }
 
@@ -58,23 +72,27 @@ class App extends Component {
       })
         .then((res) => {
           if (res.status === 401) {
-            console.log('invalid login');
-            this.setState({
-              signUpSignInError: 'Invalid login.',
-            });
+            res.json().then(
+              (err) => {
+                console.log('invalid login', err);
+                this.setState({
+                  signUpSignInError: err.error,
+                });
+              }
+            )
           } else {
-            return res.json();
+            res.json().then(
+              (token) => {
+                localStorage.setItem('token', token);
+                this.setState({
+                  signUpSignInError: '',
+                  authenticated: token,
+                });
+              }
+            )
           }
         })
-        .then((data) => {
-          const { token } = data;
-          localStorage.setItem('token', token);
-          this.setState({
-            signUpSignInError: '',
-            authenticated: token,
-          });
-        });
-    }
+    };
   }
 
   handleSignOut = () => {
