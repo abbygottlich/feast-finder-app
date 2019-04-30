@@ -9,14 +9,8 @@ function returnedRestaurant(state = {}, action) {
     } return state;
 }
 
-function inputFail(state = {}, action) {
-    if (action.type === actionNames.INPUT_FAIL) {
-        return action.value;
-    } return state;
-}
-
 const rootReducer = combineReducers({
-    returnedRestaurant, inputFail
+    returnedRestaurant
 });
 
 export default rootReducer;

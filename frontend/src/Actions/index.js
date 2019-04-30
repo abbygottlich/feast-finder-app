@@ -1,5 +1,4 @@
 import * as types from '../Constants'
-import state from '../state';
 
 export const fetchRestaurant = (city, USstate) => dispatch => {
     if (city && USstate) {
@@ -19,7 +18,6 @@ export const fetchRestaurant = (city, USstate) => dispatch => {
                 // if it's in state.dislikes, re-fetch
                 // if it's not in state.dislikes, return it
                 // if it's in state.likes, return it with thumbs up symbol
-                // write this code in the RestaurantInfo.js file???
                 dispatch({
                     type: types.RESTAURANT_SUCCESS,
                     value: restaurantData
@@ -30,8 +28,5 @@ export const fetchRestaurant = (city, USstate) => dispatch => {
                     type: types.RESTAURANT_FAIL
                 })
             )
-    } else dispatch({
-        type: types.INPUT_FAIL,
-        value: state.inputFail + 1
-    })
+    }
 }

@@ -10,9 +10,11 @@ class Header extends Component {
         this.state = {
             city: "",
             USstate: "",
-            returnedRestaurant: [],
+            returnedRestaurant: false,
             toggle: false,
-            menuIcon: "menu"
+            menuIcon: "menu",
+            showError: false,
+            showMessage: true
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,8 +41,18 @@ class Header extends Component {
     handleSubmit(e) {
         // prevents the form from being refreshed before it gets submitted
         e.preventDefault()
-        // fetching from the backend API
-        this.props.fetchRestaurants(this.state.city, this.state.USstate)
+        if (this.state.city === "" || this.state.USstate === "") {
+            this.setState({
+                showError: true
+            })
+        } else {
+            // fetching from the backend API
+            this.props.fetchRestaurants(this.state.city, this.state.USstate)
+            this.setState({
+                returnedRestaurant: true,
+                showMessage: false
+            })
+        }
     }
 
     toggleHandler() {
@@ -91,6 +103,11 @@ class Header extends Component {
                     </form>
                     <button className={this.state.menuIcon} onClick={this.toggleHandler}></button>
                 </div>
+                {
+                    // !this.state.showError && !this.state.returnedRestaurant && this.state.showMessage ? <div className="hungry-message">Hungry? Type in your city and state and we'll tell you where to go!</div>
+                    this.state.showError && !this.state.returnedRestaurant ? <div className="hungry-message">Please type in your city and state to retrieve a suggestion.</div>
+                        : null
+                }
                 <div>{this.showMenu()}</div>
             </div>
         )
