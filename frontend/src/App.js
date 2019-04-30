@@ -35,10 +35,10 @@ class App extends Component {
           if (res.status === 422) {
             res.json()
               .then(
-                () => {
-                  console.log('username already exists');
+                (err) => {
+                  console.log('username already exists', err);
                   this.setState({
-                    signUpSignInError: "Username already exists."
+                    signUpSignInError: err.error
                   });
                 }
               )
@@ -82,7 +82,8 @@ class App extends Component {
             )
           } else {
             res.json().then(
-              (token) => {
+              (data) => {
+                const token = data.token
                 localStorage.setItem('token', token);
                 this.setState({
                   signUpSignInError: '',
