@@ -36,9 +36,14 @@ class RestaurantInfo extends Component {
         })
             .then(res => res.json())
             .then(restaurantData => {
-            }).then(this.setState({
+            })
+            .then(this.setState({
                 restaurantSaved: true
             }))
+            // resetting restaurantSaved to false after 1 second to show saved message again
+            .then(setTimeout(() => {
+                this.setState({ restaurantSaved: false });
+            }, 1000))
     }
 
     render() {
