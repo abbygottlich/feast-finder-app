@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/feast-finder-app/precache-manifest.a789a8a29fc48e45223a06173e2b9d04.js"
+  "/feast-finder-app/precache-manifest.ed5bdc119adb86be8d1549f3eaa8d359.js"
 );
 
 workbox.clientsClaim();

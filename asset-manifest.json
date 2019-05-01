@@ -1,5 +1,5 @@
 {
-  "main.css": "/feast-finder-app/static/css/main.983faf50.chunk.css",
+  "main.css": "/feast-finder-app/static/css/main.d7a175b2.chunk.css",
   "main.js": "/feast-finder-app/static/js/main.931c2b0b.chunk.js",
   "main.js.map": "/feast-finder-app/static/js/main.931c2b0b.chunk.js.map",
   "runtime~main.js": "/feast-finder-app/static/js/runtime~main.ae26ca81.js",
@@ -7,8 +7,8 @@
   "static/js/2.6dbfa1ac.chunk.js": "/feast-finder-app/static/js/2.6dbfa1ac.chunk.js",
   "static/js/2.6dbfa1ac.chunk.js.map": "/feast-finder-app/static/js/2.6dbfa1ac.chunk.js.map",
   "index.html": "/feast-finder-app/index.html",
-  "precache-manifest.a789a8a29fc48e45223a06173e2b9d04.js": "/feast-finder-app/precache-manifest.a789a8a29fc48e45223a06173e2b9d04.js",
+  "precache-manifest.ed5bdc119adb86be8d1549f3eaa8d359.js": "/feast-finder-app/precache-manifest.ed5bdc119adb86be8d1549f3eaa8d359.js",
   "service-worker.js": "/feast-finder-app/service-worker.js",
-  "static/css/main.983faf50.chunk.css.map": "/feast-finder-app/static/css/main.983faf50.chunk.css.map",
+  "static/css/main.d7a175b2.chunk.css.map": "/feast-finder-app/static/css/main.d7a175b2.chunk.css.map",
   "static/media/App.css": "/feast-finder-app/static/media/x-icon.084764e6.svg"
 }
