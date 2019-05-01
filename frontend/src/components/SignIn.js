@@ -7,8 +7,7 @@ class SignIn extends Component {
 
         this.state = {
             username: "",
-            password: "",
-            loadingMessage: false
+            password: ""
         };
     }
 
@@ -17,9 +16,6 @@ class SignIn extends Component {
         this.props.onSignIn({
             username: this.state.username,
             password: this.state.password
-        })
-        this.setState({
-            loadingMessage: true
         })
     }
 
@@ -42,7 +38,6 @@ class SignIn extends Component {
                 >
                 </input>
                 <button className="login-button" type="submit">Sign In</button>
-                {this.state.loadingMessage ? <div className="sign-up-sign-in-loader">loading...</div> : null}
             </form>
         );
     }

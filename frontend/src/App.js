@@ -24,7 +24,9 @@ class App extends Component {
         signUpSignInError: "Passwords do not match."
       });
     } else {
-
+      this.setState({
+        signUpSignInError: 'Loading...',
+      })
       // ${process.env.REACT_APP_API_URL}
       fetch(`/api/users`, {
         method: "POST",
@@ -64,6 +66,9 @@ class App extends Component {
         signUpSignInError: 'Please provide all fields.',
       });
     } else {
+      this.setState({
+        signUpSignInError: 'Loading...',
+      })
       // ${process.env.REACT_APP_API_URL}
       fetch(`/api/sessions`, {
         method: 'POST',

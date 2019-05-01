@@ -23,6 +23,7 @@ class SignUpSignIn extends Component {
               <div className="logo"></div>
               <div className="welcome-text">Welcome to Feast Finder!</div>
             </div>
+            {this.props.error && this.renderError()}
             <div className="login-sections">
               <div className="signin-section">
                 <SignIn onSignIn={this.props.onSignIn} />
@@ -31,7 +32,6 @@ class SignUpSignIn extends Component {
                 <SignUp onSignUp={this.props.onSignUp} />
               </div>
             </div>
-            {this.props.error && this.renderError()}
           </div>
         </Col>
       </Row>
