@@ -92,7 +92,9 @@
 }
 
 .menu-block {
-  float: right;
+  position: absolute;
+  z-index: 2;
+  right: 0;
   width: 300px;
   height: 150px;
   background-color: #762b24;
@@ -188,7 +190,7 @@
   text-transform: uppercase;
   color: #d3d3d3;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 75px;
 }
 
 .regenerate-message, .rating-message, .retrieve-message {
@@ -199,8 +201,16 @@
   margin-top: 10px;
 }
 
-.regenerate-message, .retrieve-message {
+.regenerate-message {
   margin-top: 20px;
+}
+
+.retrieve-message {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
 
 /* like/dislike buttons */
@@ -551,7 +561,7 @@
 
   .retrieve-message {
     width: 300px;
-    margin: auto;
+    margin-left: 37.5px;
     margin-top: 20px;
   }
 
