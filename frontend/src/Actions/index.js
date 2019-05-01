@@ -1,4 +1,5 @@
 import * as types from '../Constants'
+import state from '../state';
 
 export const fetchRestaurant = (city, USstate) => dispatch => {
     if (city && USstate) {
@@ -9,7 +10,8 @@ export const fetchRestaurant = (city, USstate) => dispatch => {
         const urlToFetch = apiUrl + params
         // this dispatch is sending a signal that the fetch is starting - use for spinning wheel later
         dispatch({
-            type: types.RESTAURANT_REQUEST
+            type: types.RESTAURANT_REQUEST,
+            value: state.isLoading + 1
         })
         fetch(urlToFetch)
             .then(res => res.json())

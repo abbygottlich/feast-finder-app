@@ -1,3 +1,4 @@
 export default {
-    returnedRestaurant: null
+    returnedRestaurant: null,
+    isLoading: 1
 }
