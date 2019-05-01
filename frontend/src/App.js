@@ -27,8 +27,7 @@ class App extends Component {
       this.setState({
         signUpSignInError: 'Loading...',
       })
-      // ${process.env.REACT_APP_API_URL}
-      fetch(`/api/users`, {
+      fetch(`${process.env.REACT_APP_API_URL}/api/users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials)
@@ -69,8 +68,7 @@ class App extends Component {
       this.setState({
         signUpSignInError: 'Loading...',
       })
-      // ${process.env.REACT_APP_API_URL}
-      fetch(`/api/sessions`, {
+      fetch(`${process.env.REACT_APP_API_URL}/api/sessions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credentials),
