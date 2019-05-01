@@ -556,7 +556,8 @@
   }
 
   .welcome-text {
-    width: 300px;
+    width: fit-content;
+    margin-right: 0px;
   }
 
   .form-fields {
