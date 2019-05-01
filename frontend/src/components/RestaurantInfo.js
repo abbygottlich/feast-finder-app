@@ -82,7 +82,7 @@ class RestaurantInfo extends Component {
                     {this.state.restaurantSaved === true ? <div className="saved">Saved!</div> : null}
                 </div>
             </div>
-        } else return null
+        } else return <div className="hungry-message">Hungry? Type in your city and state and we'll tell you where to go!</div>
     }
 }
 

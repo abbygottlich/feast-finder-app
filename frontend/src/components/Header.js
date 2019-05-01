@@ -104,8 +104,7 @@ class Header extends Component {
                     <button className={this.state.menuIcon} onClick={this.toggleHandler}></button>
                 </div>
                 {
-                    // !this.state.showError && !this.state.returnedRestaurant && this.state.showMessage ? <div className="hungry-message">Hungry? Type in your city and state and we'll tell you where to go!</div>
-                    this.state.showError && !this.state.returnedRestaurant ? <div className="hungry-message">Please type in your city and state to retrieve a suggestion.</div>
+                    this.state.showError && !this.state.returnedRestaurant ? <div className="retrieve-message">Please type in your city and state to retrieve a suggestion.</div>
                         : null
                 }
                 <div>{this.showMenu()}</div>

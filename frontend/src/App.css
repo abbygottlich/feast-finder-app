@@ -191,7 +191,7 @@
   margin-top: 20px;
 }
 
-.regenerate-message, .rating-message {
+.regenerate-message, .rating-message, .retrieve-message {
   font-family: "Georgia", serif;
   font-size: 18px;
   font-style: italic;
@@ -199,7 +199,7 @@
   margin-top: 10px;
 }
 
-.regenerate-message {
+.regenerate-message, .retrieve-message {
   margin-top: 20px;
 }
 
