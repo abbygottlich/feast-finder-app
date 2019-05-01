@@ -8,7 +8,8 @@ export const fetchRestaurant = (city, USstate) => dispatch => {
         const stateName = USstate.toUpperCase()
         const params = city + "," + stateName
         const urlToFetch = apiUrl + params
-        // this dispatch is sending a signal that the fetch is starting - use for spinning wheel later
+
+        // this dispatch is sending a signal that the fetch is starting
         dispatch({
             type: types.RESTAURANT_REQUEST,
             value: state.isLoading + 1
@@ -25,7 +26,14 @@ export const fetchRestaurant = (city, USstate) => dispatch => {
                     value: restaurantData
                 })
 
-            ).catch(error =>
+
+            ).then(
+                dispatch({
+                    type: types.RESTAURANT_SUCCESS,
+                    value: state.isLoading - 1
+                })
+            )
+            .catch(error =>
                 dispatch({
                     type: types.RESTAURANT_FAIL
                 })
