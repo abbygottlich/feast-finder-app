@@ -180,7 +180,7 @@
 }
 
 /* messages */
-.hungry-message {
+.hungry-message, .loading-message {
   width: 300px;
   font-family: "Raleway", sans-serif;
   font-size: 32px;

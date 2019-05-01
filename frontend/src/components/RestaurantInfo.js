@@ -5,7 +5,7 @@ class RestaurantInfo extends Component {
 
     render() {
         if (!this.props.returnedRestaurant && this.props.isLoading === 2) {
-            return <div>Loading...</div>
+            return <div className="loading-message">Loading...</div>
         }
         // if there is a returned restaurant and the city/state blanks are filled in, return the restaurant
         else if (this.props.returnedRestaurant && this.props.isLoading === 2) {
