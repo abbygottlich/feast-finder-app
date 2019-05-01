@@ -27,7 +27,6 @@ exports.create = function create(request, response) {
 exports.update = function update(request, response) {
 
     const restaurant = request.body
-    console.log("update", restaurant)
     Restaurant.findOneAndUpdate({ _id: restaurant._id }, restaurant)
         .then(updatedRestaurant => {
             response.json(updatedRestaurant);

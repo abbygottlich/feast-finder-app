@@ -30,14 +30,12 @@ class Favorites extends Component {
             method: "DELETE"
         })
             .then(status => {
-                console.log("Restaurant Deleted!", status)
                 const rating = "like"
                 fetchRatings(rating)
             })
     }
 
     moveToDislikes = (restaurant) => {
-        console.log("sdfhlaksdjfhalskjf", restaurant)
         const fetchRatings = this.fetchRatings
         restaurant.rating = "dislike"
         // ${process.env.REACT_APP_API_URL}

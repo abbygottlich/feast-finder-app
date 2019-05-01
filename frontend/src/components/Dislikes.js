@@ -30,14 +30,12 @@ class Dislikes extends Component {
             method: "DELETE"
         })
             .then(status => {
-                console.log("Restaurant Deleted!", status)
                 const rating = "dislike"
                 fetchRatings(rating)
             })
     }
 
     moveToLikes = (restaurant) => {
-        console.log("sdfhlaksdjfhalskjf", restaurant)
         const fetchRatings = this.fetchRatings
         restaurant.rating = "like"
         // ${process.env.REACT_APP_API_URL}
