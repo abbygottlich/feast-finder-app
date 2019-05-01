@@ -191,7 +191,7 @@
   margin-top: 20px;
 }
 
-.regenerate-message, .rating-message, .retrieve-message {
+.regenerate-message, .rating-message, .retrieve-message, {
   font-family: "Georgia", serif;
   font-size: 18px;
   font-style: italic;
@@ -445,6 +445,14 @@
 .login-button:hover {
   background-color: #762b24;
   color: #ffffff;
+}
+
+.sign-up-sign-in-loader {
+  font-family: "Georgia", serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #ffffff;
+  margin-top: 20px;
 }
 
 .error-message {
