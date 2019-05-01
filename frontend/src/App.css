@@ -555,6 +555,10 @@
     margin-top: 30px;
   }
 
+  .welcome-text {
+    width: 300px;
+  }
+
   .form-fields {
     width: 224px;
   }
