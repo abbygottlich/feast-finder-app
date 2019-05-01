@@ -68,6 +68,7 @@ class ReturnedRestaurant extends Component {
                             <div className="result-category">{result.categories[0].title}</div>
                             <div className="result-price">{result.price}</div>
                             <div className="result-location">{result.location.display_address.join(" ")}</div>
+                            {this.state.restaurantSaved === true ? <div className="saved">Saved!</div> : null}
                         </div>
                     </div>
                 </div>
@@ -77,7 +78,6 @@ class ReturnedRestaurant extends Component {
                 <div className="regenerate-message">Don't like your result? Click the 'Find A Feast!' button again.</div>
                 <div className="rating-message">Already been here? Give it a thumbs up or thumbs down and the rating will be saved to your profile.</div>
                 <div>{this.loadRatingButtons()}</div>
-                {this.state.restaurantSaved === true ? <div className="saved">Saved!</div> : null}
             </div>
         </div>
     }
