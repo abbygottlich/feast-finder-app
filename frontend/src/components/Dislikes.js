@@ -34,7 +34,6 @@ class Dislikes extends Component {
                 const rating = "dislike"
                 fetchRatings(rating)
             })
-        // .then(document.location.reload(true))
     }
 
     moveToLikes = (restaurant) => {
@@ -51,7 +50,6 @@ class Dislikes extends Component {
             .then(restaurantData => {
                 fetchRatings()
             })
-        // .then(document.location.reload(true))
     }
 
     handleClick = e => {

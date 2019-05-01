@@ -17,10 +17,6 @@ export const fetchRestaurant = (city, USstate) => dispatch => {
         fetch(urlToFetch)
             .then(res => res.json())
             .then(restaurantData =>
-                // write conditional testing whether restaurant is liked or disliked
-                // if it's in state.dislikes, re-fetch
-                // if it's not in state.dislikes, return it
-                // if it's in state.likes, return it with thumbs up symbol
                 dispatch({
                     type: types.RESTAURANT_SUCCESS,
                     value: restaurantData

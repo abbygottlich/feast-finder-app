@@ -141,10 +141,6 @@ class App extends Component {
 
     return whatToShow;
 
-    // return <div>
-    //   <whatToShow />
-    //   {this.process.VERSION}
-    // </div>;
   }
 }
 
