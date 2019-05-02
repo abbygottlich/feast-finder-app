@@ -3,8 +3,7 @@ import state from '../state';
 
 export const fetchRestaurant = (city, USstate) => dispatch => {
     if (city && USstate) {
-        // ${process.env.REACT_APP_API_URL}
-        const apiUrl = `/restaurants/`
+        const apiUrl = `${process.env.REACT_APP_API_URL}/restaurants/`
         const stateName = USstate.toUpperCase()
         const params = city + "," + stateName
         const urlToFetch = apiUrl + params
