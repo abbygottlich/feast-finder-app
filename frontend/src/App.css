@@ -255,7 +255,7 @@
 /* favorites and dislikes pages */
 .restaurant-list-bg {
   width: 100%;
-  min-height: 1100px;
+  height: 100vh;
   background-color: #eb5548;
   background-size: cover;
   margin: auto;
@@ -535,6 +535,11 @@
     margin-right: 10px;
   }
 
+  .rating-message {
+    width: 500px;
+    margin: auto;
+  }
+
   .restaurant-name {
     width: 550px;
   }
@@ -563,6 +568,18 @@
     width: 224px;
   }
 
+  .regenerate-message, .rating-message, .retrieve-message {
+    font-size: 14px;
+  }
+
+  .rating-message {
+    width: 300px;
+  }
+
+  .regenerate-message {
+    margin-top: 10px;
+  }
+
   .retrieve-message {
     width: 300px;
     margin-left: 37.5px;
@@ -571,6 +588,31 @@
 
   .hungry-message, .restaurant-name, .rating-restaurant-info, .login-sections {
     width: 300px;
+  }
+
+  .hungry-message {
+    font-size: 22px;
+  }
+
+  .result-image {
+    width: 200px;
+    height: 200px;
+    margin-top: 65px;
+  }
+
+  .restaurant-text-info {
+    width: 200px;
+    height: 200px;
+  }
+
+  .result-name {
+    width: 180px;
+    font-size: 20px;
+  }
+
+  .result-category, .result-price, .result-location {
+    width: 180px;
+    font-size: 12px;
   }
 
   .messages-and-buttons {
@@ -586,5 +628,9 @@
 
   .username-input, .password-input, .confirm-password-input, .login-button {
     font-size: 12px;
+  }
+
+  .rating-title {
+    font-size: 36px;
   }
 }

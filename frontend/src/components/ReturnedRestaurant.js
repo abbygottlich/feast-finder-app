@@ -51,8 +51,6 @@ class ReturnedRestaurant extends Component {
         const result = this.props.returnedRestaurant
 
         const bgImage = {
-            width: "300px",
-            height: "300px",
             backgroundImage: "url(" + result.image_url + ")",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat"
