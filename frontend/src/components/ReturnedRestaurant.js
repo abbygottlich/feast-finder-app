@@ -26,7 +26,8 @@ class ReturnedRestaurant extends Component {
             location: restaurant.location.display_address.join(" "),
             rating: rating
         }
-        fetch(`${process.env.REACT_APP_API_URL}/restaurants`, {
+        // ${process.env.REACT_APP_API_URL}
+        fetch(`/restaurants`, {
             method: "POST",
             body: JSON.stringify(restaurantBody),
             headers: {

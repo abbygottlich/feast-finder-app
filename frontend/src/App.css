@@ -12,9 +12,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   background-color: #eb5548;
-  padding-right: 20px;
-  padding-left: 20px;
 }
 
 .form {
@@ -85,6 +84,7 @@
   background-size: 35px;
   background-color: transparent;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .x {
@@ -123,10 +123,8 @@
 
 /* restaurant info block */
 .restaurant-info-component {
-  width: 500px;
+  width: 100%;
   position: absolute;
-  left: 50%;
-  margin-left: -250px;
   z-index: 1;
 }
 
@@ -356,7 +354,7 @@
 /* sign in and sign up page */
 .login-page {
   width: 100%;
-  min-height: 1100px;
+  height: 100vh;
   background-color: #eb5548;
   text-align: center;
 }
@@ -389,6 +387,7 @@
   background-image: url("./logo-white.png");
   background-size: 30px;
   background-repeat: no-repeat;
+  margin-left: 20px;
 }
 
 .welcome-text {
@@ -502,7 +501,6 @@
 
   .menu, .x {
     margin-top: 15px;
-    margin-right: 0px;
   }
 
   .menu-block {
