@@ -45,7 +45,8 @@ class App extends Component {
               )
           } else {
             res.json().then(
-              (token) => {
+              (data) => {
+                const token = data.token
                 localStorage.setItem('token', token);
                 this.setState({
                   signUpSignInError: '',
